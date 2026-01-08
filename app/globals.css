@@ -1,26 +1,43 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  
+  --animate-marquee: marquee 20s linear infinite;
+  --animate-bounce: bounce 2s infinite;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(-25%) translateX(-50%);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: translateY(0) translateX(-50%);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: #0B0F14;
+  background: #ffffff;
+}
+
+/* Marquee animation */
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* Bounce animation for scroll indicator */
+.animate-bounce {
+  animation: bounce 2s infinite;
 }
