@@ -264,35 +264,34 @@ function Hero() {
 }
 
 // ═══════════════════════════════════════════════════════════════
-// PARTNERS MARQUEE - Diagonal strip
+// PARTNERS MARQUEE - Seamless diagonal strips
 // ═══════════════════════════════════════════════════════════════
 function PartnersMarquee() {
   const doubled = [...PARTNERS, ...PARTNERS, ...PARTNERS];
 
   return (
-    <div className="relative bg-black py-20 overflow-hidden">
-      {/* Diagonal marquee strip */}
-      <div className="absolute inset-0 flex items-center" style={{ transform: "rotate(-3deg) scale(1.1)" }}>
-        <div className="bg-rose-500 py-6 w-[200%] flex animate-marquee">
+    <div className="relative py-16 lg:py-20 overflow-hidden">
+      {/* Main diagonal marquee strip */}
+      <div className="relative flex items-center" style={{ transform: "rotate(-2deg)" }}>
+        <div className="bg-rose-500 py-5 w-[200%] flex animate-marquee">
           {doubled.map((partner, i) => (
-            <span key={i} className="mx-16 text-white text-2xl font-black tracking-wider whitespace-nowrap flex items-center gap-4">
+            <span key={i} className="mx-10 lg:mx-16 text-white text-lg lg:text-2xl font-black tracking-wider whitespace-nowrap flex items-center gap-4">
               {partner}
-              <span className="w-3 h-3 bg-white/30 rounded-full" />
+              <span className="w-2 h-2 lg:w-3 lg:h-3 bg-white/30 rounded-full" />
             </span>
           ))}
         </div>
       </div>
       {/* Second marquee going opposite */}
-      <div className="absolute inset-0 flex items-center mt-20" style={{ transform: "rotate(3deg) scale(1.1)" }}>
-        <div className="bg-black border-y border-white/10 py-4 w-[200%] flex animate-marquee" style={{ animationDirection: "reverse", animationDuration: "40s" }}>
+      <div className="relative flex items-center mt-4" style={{ transform: "rotate(2deg)" }}>
+        <div className="border-y border-white/10 py-3 w-[200%] flex animate-marquee" style={{ animationDirection: "reverse", animationDuration: "40s" }}>
           {doubled.map((partner, i) => (
-            <span key={i} className="mx-16 text-white/30 text-lg font-bold tracking-wider whitespace-nowrap">
+            <span key={i} className="mx-10 lg:mx-16 text-white/20 text-base lg:text-lg font-bold tracking-wider whitespace-nowrap">
               {partner}
             </span>
           ))}
         </div>
       </div>
-      <div className="h-32" />
     </div>
   );
 }
@@ -405,24 +404,24 @@ function AboutSection() {
 }
 
 // ═══════════════════════════════════════════════════════════════
-// SERVICES SECTION - Chaotic Bento Grid
+// SERVICES SECTION - Chaotic Bento Grid (FIXED)
 // ═══════════════════════════════════════════════════════════════
 function ServicesSection() {
   return (
     <section id="services" className="relative bg-white overflow-hidden">
-      {/* Diagonal top slice */}
-      <div className="absolute top-0 left-0 right-0 h-32 bg-[#0a0a0a]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 30%, 0 100%)" }} />
+      {/* Diagonal top accent - positioned above content */}
+      <div className="absolute top-0 left-0 right-0 h-24 bg-[#0a0a0a]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 100%)" }} />
 
-      <div className="relative pt-48 pb-32 px-6 lg:px-16">
+      <div className="relative pt-32 pb-32 px-6 lg:px-16">
         {/* Header with giant number */}
-        <div className="flex items-start gap-8 mb-20">
-          <span className="text-[200px] lg:text-[300px] font-black text-black/5 leading-none -mt-20 hidden lg:block">8</span>
-          <div className="lg:-ml-32">
+        <div className="flex items-start gap-8 mb-16 lg:mb-20">
+          <span className="text-[150px] lg:text-[250px] font-black text-black/5 leading-none -mt-10 hidden lg:block">8</span>
+          <div className="lg:-ml-24">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-16 h-[2px] bg-rose-500" />
               <span className="text-rose-500 text-sm font-bold tracking-[0.3em] uppercase">Services</span>
             </div>
-            <h2 className="text-5xl md:text-6xl lg:text-8xl font-black text-black leading-[0.9]">
+            <h2 className="text-4xl md:text-6xl lg:text-8xl font-black text-black leading-[0.9]">
               Everything
               <br />
               <span className="text-rose-500">You Need</span>
@@ -433,7 +432,7 @@ function ServicesSection() {
         {/* Chaotic Bento Grid */}
         <div className="grid grid-cols-12 gap-4 lg:gap-6">
           {/* Large featured card */}
-          <div className="col-span-12 lg:col-span-8 row-span-2 group relative h-[400px] lg:h-auto overflow-hidden" style={{ clipPath: "polygon(0 0, 100% 0, 100% 95%, 95% 100%, 0 100%)" }}>
+          <div className="col-span-12 lg:col-span-8 row-span-2 group relative h-[400px] lg:h-[500px] overflow-hidden" style={{ clipPath: "polygon(0 0, 100% 0, 100% 95%, 95% 100%, 0 100%)" }}>
             <Image src={SERVICES[0].image} alt={SERVICES[0].title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" unoptimized />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
@@ -444,12 +443,13 @@ function ServicesSection() {
           </div>
 
           {/* Tall right card */}
-          <div className="col-span-12 md:col-span-6 lg:col-span-4 row-span-2 group relative h-[300px] lg:h-auto overflow-hidden" style={{ clipPath: "polygon(5% 0, 100% 0, 100% 100%, 0 100%, 0 5%)" }}>
+          <div className="col-span-12 md:col-span-6 lg:col-span-4 row-span-2 group relative h-[300px] lg:h-[500px] overflow-hidden" style={{ clipPath: "polygon(3% 0, 100% 0, 100% 100%, 0 100%, 0 3%)" }}>
             <Image src={SERVICES[1].image} alt={SERVICES[1].title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" unoptimized />
-            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
-            <div className="absolute inset-0 flex flex-col justify-end p-6 lg:p-8">
-              <span className="text-rose-400 text-6xl font-black mb-2">02</span>
-              <h3 className="text-2xl font-black text-white">{SERVICES[1].title}</h3>
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+            <div className="absolute inset-0 flex flex-col justify-end p-6 lg:p-8 pb-8">
+              <span className="text-rose-400 text-5xl lg:text-6xl font-black mb-2">02</span>
+              <h3 className="text-xl lg:text-2xl font-black text-white">{SERVICES[1].title}</h3>
+              <p className="text-white/60 text-sm mt-2 lg:hidden">{SERVICES[1].description}</p>
             </div>
           </div>
 
@@ -460,19 +460,18 @@ function ServicesSection() {
               className={`col-span-12 md:col-span-6 lg:col-span-4 group relative h-[280px] overflow-hidden`}
               style={{ 
                 clipPath: i === 0 
-                  ? "polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 90%)" 
+                  ? "polygon(0 0, 100% 0, 100% 100%, 5% 100%, 0 95%)" 
                   : i === 1 
-                    ? "polygon(0 10%, 10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%)" 
-                    : "polygon(0 0, 90% 0, 100% 10%, 100% 100%, 0 100%)",
-                transform: `translateY(${i * 10 - 10}px)`
+                    ? "polygon(0 5%, 5% 0, 100% 0, 100% 95%, 95% 100%, 0 100%)" 
+                    : "polygon(0 0, 95% 0, 100% 5%, 100% 100%, 0 100%)"
               }}
             >
               <Image src={service.image} alt={service.title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" unoptimized />
               <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors" />
-              <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <span className="text-rose-400 text-4xl font-black mb-2">0{i + 3}</span>
-                <h3 className="text-xl font-black text-white group-hover:text-rose-400 transition-colors">{service.title}</h3>
-                <p className="text-white/50 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity">{service.description}</p>
+              <div className="absolute inset-0 flex flex-col justify-end p-6 pb-8">
+                <span className="text-rose-400 text-3xl lg:text-4xl font-black mb-2">0{i + 3}</span>
+                <h3 className="text-lg lg:text-xl font-black text-white group-hover:text-rose-400 transition-colors">{service.title}</h3>
+                <p className="text-white/60 text-sm mt-2 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity line-clamp-2">{service.description}</p>
               </div>
             </div>
           ))}
@@ -480,26 +479,29 @@ function ServicesSection() {
           {/* Bottom row - varied sizes */}
           <div className="col-span-12 md:col-span-4 lg:col-span-3 group relative h-[200px] overflow-hidden border-4 border-rose-500">
             <Image src={SERVICES[5].image} alt={SERVICES[5].title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" unoptimized />
-            <div className="absolute inset-0 bg-black/70 group-hover:bg-rose-500/80 transition-colors flex items-center justify-center">
-              <h3 className="text-xl font-black text-white text-center px-4">{SERVICES[5].title}</h3>
+            <div className="absolute inset-0 bg-black/70 group-hover:bg-rose-500/80 transition-colors flex flex-col items-center justify-center p-4">
+              <span className="text-rose-400 lg:hidden text-2xl font-black mb-1">06</span>
+              <h3 className="text-lg lg:text-xl font-black text-white text-center">{SERVICES[5].title}</h3>
+              <p className="text-white/60 text-xs mt-2 text-center lg:hidden line-clamp-2">{SERVICES[5].description}</p>
             </div>
           </div>
 
-          <div className="col-span-12 md:col-span-8 lg:col-span-5 group relative h-[200px] overflow-hidden" style={{ clipPath: "polygon(3% 0, 100% 0, 97% 100%, 0 100%)" }}>
+          <div className="col-span-12 md:col-span-8 lg:col-span-5 group relative h-[200px] overflow-hidden" style={{ clipPath: "polygon(2% 0, 100% 0, 98% 100%, 0 100%)" }}>
             <Image src={SERVICES[6].image} alt={SERVICES[6].title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" unoptimized />
-            <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent flex items-center">
+            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent flex items-center">
               <div className="p-6">
-                <span className="text-rose-400 text-3xl font-black">07</span>
-                <h3 className="text-2xl font-black text-white mt-2">{SERVICES[6].title}</h3>
+                <span className="text-rose-400 text-2xl lg:text-3xl font-black">07</span>
+                <h3 className="text-xl lg:text-2xl font-black text-white mt-2">{SERVICES[6].title}</h3>
+                <p className="text-white/60 text-sm mt-2 lg:hidden line-clamp-2">{SERVICES[6].description}</p>
               </div>
             </div>
           </div>
 
-          <div className="col-span-12 lg:col-span-4 group relative h-[200px] overflow-hidden bg-rose-500 flex items-center justify-center" style={{ clipPath: "polygon(5% 0, 100% 0, 95% 100%, 0 100%)" }}>
-            <div className="text-center px-6">
-              <span className="text-white/30 text-5xl font-black">08</span>
-              <h3 className="text-xl font-black text-white mt-2">{SERVICES[7].title}</h3>
-              <p className="text-white/70 text-sm mt-2">{SERVICES[7].description}</p>
+          <div className="col-span-12 lg:col-span-4 group relative h-[220px] lg:h-[200px] overflow-hidden bg-rose-500 flex items-center justify-center" style={{ clipPath: "polygon(3% 0, 100% 0, 97% 100%, 0 100%)" }}>
+            <div className="text-center px-6 py-4">
+              <span className="text-white/30 text-4xl lg:text-5xl font-black">08</span>
+              <h3 className="text-lg lg:text-xl font-black text-white mt-2">{SERVICES[7].title}</h3>
+              <p className="text-white/80 text-sm mt-2 line-clamp-3">{SERVICES[7].description}</p>
             </div>
           </div>
         </div>
@@ -690,14 +692,14 @@ function PortfolioSection() {
                   0{i + 2}
                 </div>
 
-                <div className="absolute bottom-0 left-0 right-0 p-8">
+                <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
                   <span className="text-rose-400 text-xs font-bold tracking-wider uppercase mb-2 block">
                     {project.category}
                   </span>
-                  <h3 className="text-3xl font-black text-white group-hover:text-rose-400 transition-colors">
+                  <h3 className="text-2xl lg:text-3xl font-black text-white group-hover:text-rose-400 transition-colors">
                     {project.name}
                   </h3>
-                  <p className="mt-3 text-white/50 text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                  <p className="mt-2 lg:mt-3 text-white/60 text-sm lg:opacity-0 lg:group-hover:opacity-100 transition-opacity line-clamp-2">
                     {project.description}
                   </p>
                 </div>
@@ -725,11 +727,11 @@ function ProductsSection() {
 
   return (
     <section id="products" className="relative bg-white overflow-hidden py-32 lg:py-48">
-      {/* Diagonal slice top */}
-      <div className="absolute top-0 left-0 right-0 h-48 bg-[#0a0a0a]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 20%, 0 100%)" }} />
+      {/* Diagonal slice top - smaller on mobile */}
+      <div className="absolute top-0 left-0 right-0 h-20 lg:h-32 bg-[#0a0a0a]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 100%)" }} />
 
       {/* Header */}
-      <div className="relative px-6 lg:px-16 mb-20 pt-16">
+      <div className="relative px-6 lg:px-16 mb-20 pt-8 lg:pt-16">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
           <div>
             <div className="flex items-center gap-4 mb-4">
@@ -813,7 +815,7 @@ function ProductsSection() {
 }
 
 // ═══════════════════════════════════════════════════════════════
-// STATS SECTION - Massive staggered numbers
+// STATS SECTION - Massive staggered numbers (FIXED)
 // ═══════════════════════════════════════════════════════════════
 function StatsSection() {
   const stats = [
@@ -825,40 +827,28 @@ function StatsSection() {
 
   return (
     <section className="relative bg-rose-500 overflow-hidden" style={{ clipPath: "polygon(0 5%, 100% 0, 100% 95%, 0 100%)" }}>
-      {/* Background pattern */}
+      {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-10">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-32 h-32 border border-white rotate-45"
-            style={{
-              left: `${(i % 5) * 25}%`,
-              top: `${Math.floor(i / 5) * 30}%`,
-              transform: `rotate(${45 + i * 5}deg)`,
-            }}
-          />
-        ))}
+        <div className="absolute top-10 left-10 w-40 h-40 border-2 border-white rounded-full" />
+        <div className="absolute bottom-10 right-10 w-60 h-60 border-2 border-white rounded-full" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 border border-white rotate-45" />
       </div>
 
-      <div className="relative py-32 lg:py-48 px-6 lg:px-16">
+      <div className="relative py-32 lg:py-40 px-6 lg:px-16">
         <div className="max-w-7xl mx-auto">
-          {/* Staggered stats layout */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
+          {/* Stats grid - each stat is self-contained */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
             {stats.map((stat, i) => (
               <div
                 key={stat.label}
-                className="relative text-center lg:text-left"
-                style={{ transform: `translateY(${i % 2 === 0 ? 0 : 30}px)` }}
+                className="text-center"
+                style={{ transform: `translateY(${i % 2 === 1 ? 20 : 0}px)` }}
               >
-                <div className="relative">
-                  <span className="text-7xl md:text-9xl lg:text-[160px] font-black text-white leading-none">
-                    {stat.number}
-                  </span>
-                  <div className="lg:absolute lg:bottom-4 lg:left-full lg:ml-4 lg:whitespace-nowrap mt-2 lg:mt-0">
-                    <div className="text-white font-bold text-lg">{stat.label}</div>
-                    <div className="text-white/60 text-sm">{stat.sublabel}</div>
-                  </div>
+                <div className="text-6xl md:text-8xl lg:text-9xl font-black text-white leading-none mb-4">
+                  {stat.number}
                 </div>
+                <div className="text-white font-bold text-lg lg:text-xl">{stat.label}</div>
+                <div className="text-white/60 text-sm mt-1">{stat.sublabel}</div>
               </div>
             ))}
           </div>
@@ -913,18 +903,16 @@ function TestimonialsSection() {
           </h2>
         </div>
 
-        {/* Staggered Cards */}
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-8">
+        {/* Staggered Cards - No transforms on mobile */}
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-6 lg:gap-10">
           {testimonials.map((t, i) => (
             <div
               key={t.name}
-              className="group relative"
-              style={{ transform: `translateY(${i * 30 - 30}px) rotate(${i === 1 ? 0 : i === 0 ? -2 : 2}deg)` }}
+              className={`group relative ${i === 0 ? 'lg:-rotate-2 lg:-translate-y-8' : i === 2 ? 'lg:rotate-2 lg:translate-y-8' : ''}`}
             >
-              {/* Card background with clip-path */}
+              {/* Card background - simpler clip-path for better text visibility */}
               <div
-                className="relative bg-white/5 backdrop-blur-xl border border-white/10 p-8 lg:p-10 transition-all duration-500 group-hover:bg-white/10 group-hover:border-rose-500/50"
-                style={{ clipPath: i === 0 ? "polygon(0 0, 100% 5%, 100% 100%, 0 95%)" : i === 1 ? "polygon(0 5%, 100% 0, 100% 95%, 0 100%)" : "polygon(0 0, 100% 5%, 100% 95%, 0 100%)" }}
+                className="relative bg-white/5 backdrop-blur-xl border border-white/10 p-6 lg:p-10 transition-all duration-500 group-hover:bg-white/10 group-hover:border-rose-500/50"
               >
                 {/* Quote icon */}
                 <div className="w-16 h-16 bg-rose-500 flex items-center justify-center mb-8 -mt-4 -ml-4" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 30% 100%)" }}>
@@ -966,25 +954,25 @@ function TestimonialsSection() {
 // ═══════════════════════════════════════════════════════════════
 function CareersSection() {
   return (
-    <section className="relative min-h-[80vh] overflow-hidden">
-      {/* Diagonal split background */}
-      <div className="absolute inset-0 bg-white" style={{ clipPath: "polygon(0 0, 45% 0, 55% 100%, 0 100%)" }}>
-        <div className="h-full flex items-center px-8 lg:px-20">
-          <div className="max-w-md">
+    <section className="relative min-h-[80vh] lg:min-h-[80vh] overflow-hidden">
+      {/* On mobile: stacked layout, on desktop: diagonal split */}
+      <div className="lg:absolute lg:inset-0 bg-white py-20 lg:py-0" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+        <div className="h-full flex items-center px-6 lg:px-20">
+          <div className="max-w-md lg:max-w-lg">
             <span className="text-rose-500 text-sm font-bold tracking-[0.3em] uppercase mb-6 block">Careers</span>
-            <h2 className="text-5xl md:text-7xl font-black text-black leading-[0.85] mb-8">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-black leading-[0.85] mb-6 lg:mb-8">
               Join
-              <br />
-              Our
-              <br />
-              <span className="text-rose-500">Team</span>
+              <br className="hidden lg:block" />
+              <span className="lg:hidden"> </span>Our
+              <br className="hidden lg:block" />
+              <span className="lg:hidden"> </span><span className="text-rose-500">Team</span>
             </h2>
-            <p className="text-xl text-black/50 leading-relaxed">
+            <p className="text-lg lg:text-xl text-black/50 leading-relaxed">
               No matter what qualifications you have — as long as you have the desire and drive to succeed, we'd love to welcome you.
             </p>
             <a
               href="#contact"
-              className="inline-flex mt-10 items-center gap-3 px-10 py-5 bg-black text-white font-bold hover:bg-rose-500 transition-colors"
+              className="inline-flex mt-8 lg:mt-10 items-center gap-3 px-8 lg:px-10 py-4 lg:py-5 bg-black text-white font-bold hover:bg-rose-500 transition-colors"
               style={{ clipPath: "polygon(5% 0, 100% 0, 95% 100%, 0 100%)" }}
             >
               Get In Touch
@@ -996,7 +984,7 @@ function CareersSection() {
         </div>
       </div>
 
-      <div className="absolute inset-0" style={{ clipPath: "polygon(45% 0, 100% 0, 100% 100%, 55% 100%)" }}>
+      <div className="hidden lg:block absolute inset-0" style={{ clipPath: "polygon(55% 0, 100% 0, 100% 100%, 45% 100%)" }}>
         <Image
           src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=85"
           alt="Join our team"
