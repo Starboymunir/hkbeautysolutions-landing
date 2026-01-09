@@ -1,43 +1,147 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
-  
-  --animate-marquee: marquee 20s linear infinite;
-  --animate-bounce: bounce 2s infinite;
-
-  @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateY(-25%) translateX(-50%);
-      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-    }
-    50% {
-      transform: translateY(0) translateX(-50%);
-      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-  }
-}
-
 html {
   scroll-behavior: smooth;
 }
 
-body {
-  color: #0B0F14;
-  background: #ffffff;
+/* Hide scrollbar for horizontal scroll sections */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom scrollbar for main page */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFFBF8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E8D8D8;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4919E;
+}
+
+/* Slide up animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+/* Animation delays */
+.animation-delay-200 {
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+/* Float animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Slow pulse */
+@keyframes pulseSlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 4s ease-in-out infinite;
 }
 
 /* Marquee animation */
-.animate-marquee {
-  animation: marquee 20s linear infinite;
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-/* Bounce animation for scroll indicator */
-.animate-bounce {
-  animation: bounce 2s infinite;
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Selection color */
+::selection {
+  background: #F5D6DC;
+  color: #2D2626;
+}
+
+/* Focus styles */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* Smooth transitions for all interactive elements */
+a, button {
+  transition: all 0.3s ease;
+}
+
+/* Typography refinements */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 200;
+  letter-spacing: -0.02em;
+}
+
+/* Italic text styling */
+.italic {
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* Image loading placeholder */
+img {
+  background: linear-gradient(135deg, #FAF5F3 0%, #F5D6DC 100%);
 }
