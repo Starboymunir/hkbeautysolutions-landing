@@ -434,7 +434,7 @@ export default function Home() {
               <div className="space-y-6">
                 <div className="w-48 h-20 relative">
                   <Image 
-                    src="/photo for website beauty solutions/Photo of brands/Rebel Tatttoos/Copy of Rebel Tattoos _logo (2).png"
+                    src="/images/brands/rebel-tattoos/logo.png"
                     alt="Rebel Tattoos Logo"
                     fill
                     className="object-contain object-left"
@@ -456,7 +456,7 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative h-64 rounded-2xl overflow-hidden">
                   <Image 
-                    src="/photo for website beauty solutions/Photo of brands/Rebel Tatttoos/pink eyeliner heart amazon 6.jpg"
+                    src="/images/brands/rebel-tattoos/pink-eyeliner.jpg"
                     alt="Rebel Tattoos Product"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-500"
@@ -464,7 +464,7 @@ export default function Home() {
                 </div>
                 <div className="relative h-64 rounded-2xl overflow-hidden">
                   <Image 
-                    src="/photo for website beauty solutions/Photo of brands/Rebel Tatttoos/violet eyeliner butterfly amazon 4 (1).jpg"
+                    src="/images/brands/rebel-tattoos/violet-butterfly.jpg"
                     alt="Rebel Tattoos Product"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-500"
@@ -472,7 +472,7 @@ export default function Home() {
                 </div>
                 <div className="relative h-64 rounded-2xl overflow-hidden">
                   <Image 
-                    src="/photo for website beauty solutions/Photo of brands/Rebel Tatttoos/blue stars Amazon 1.2 (1).jpg"
+                    src="/images/brands/rebel-tattoos/blue-stars-1.jpg"
                     alt="Rebel Tattoos Product"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-500"
@@ -480,7 +480,7 @@ export default function Home() {
                 </div>
                 <div className="relative h-64 rounded-2xl overflow-hidden">
                   <Image 
-                    src="/photo for website beauty solutions/Photo of brands/Rebel Tatttoos/Snow Amazon 56.jpg"
+                    src="/images/brands/rebel-tattoos/snow.jpg"
                     alt="Rebel Tattoos Product"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-500"
@@ -499,7 +499,7 @@ export default function Home() {
             <div className="group">
               <div className="relative h-80 rounded-2xl overflow-hidden mb-6">
                 <Image 
-                  src="/photo for website beauty solutions/Photo of brands/Coolboxbeauty/coolboxbeauty_1.jpg"
+                  src="/images/brands/Coolboxbeauty/coolboxbeauty_1.jpg"
                   alt="CoolBoxBeauty Products"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -524,7 +524,7 @@ export default function Home() {
             <div className="group">
               <div className="relative h-80 rounded-2xl overflow-hidden mb-6">
                 <Image 
-                  src="/photo for website beauty solutions/Photo of brands/Colorfit/colorfit 1.jpeg"
+                  src="/images/brands/Colorfit/colorfit-1.jpeg"
                   alt="ColorFit Products"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -568,14 +568,14 @@ export default function Home() {
               {[...Array(2)].map((_, setIndex) => (
                 <div key={setIndex} className="flex items-center gap-16 px-8">
                   {[
-                    { name: 'Amazon', logo: '/photo for website beauty solutions/amazon-logo-amazon-icon-free-free-vector-removebg-preview.png' },
-                    { name: 'TEMU', logo: '/photo for website beauty solutions/temu-removebg-preview.png' },
-                    { name: 'Lazada', logo: '/photo for website beauty solutions/lazada_logo-removebg-preview.png' },
-                    { name: 'Decathlon', logo: '/photo for website beauty solutions/decathlon-removebg-preview.png' },
-                    { name: 'Bookazine', logo: '/photo for website beauty solutions/bookazine-landmark-princes-logo-1200-630-v2-removebg-preview.png' },
-                    { name: 'Faberlic', logo: '/photo for website beauty solutions/faberlic-logo-png-transparent.png' },
-                    { name: 'KHY', logo: '/photo for website beauty solutions/khy_by_kylie_jenner_logo-removebg-preview.png' },
-                    { name: 'Louder', logo: '/photo for website beauty solutions/louder-logo-png_seeklogo-184086-removebg-preview.png' },
+                    { name: 'Amazon', logo: '/images/amazon.png' },
+                    { name: 'TEMU', logo: '/images/temu.png' },
+                    { name: 'Lazada', logo: '/images/lazada.png' },
+                    { name: 'Decathlon', logo: '/images/decathlon.png' },
+                    { name: 'Bookazine', logo: '/images/bookazine.png' },
+                    { name: 'Faberlic', logo: '/images/faberlic.png' },
+                    { name: 'KHY', logo: '/images/khy.png' },
+                    { name: 'Louder', logo: '/images/louder.png' },
                   ].map((partner, index) => (
                     <div 
                       key={`${setIndex}-${index}`}
