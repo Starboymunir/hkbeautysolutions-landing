@@ -72,27 +72,27 @@ export default function Home() {
     { 
       title: 'Private Label & Brand Creation', 
       description: 'Build your own brand — we handle naming, identity, and full market positioning',
-      image: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800&q=80'
+      image: '/images/stock/skincare-1.jpg'
     },
     { 
       title: 'Product Development', 
       description: 'Custom formulations and product design tailored to your market needs',
-      image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&q=80'
+      image: '/images/stock/beauty-products.jpg'
     },
     { 
       title: 'Packaging & Design', 
       description: 'Full packaging solutions from concept sketches to production-ready files',
-      image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&q=80'
+      image: '/images/stock/packaging.jpg'
     },
     { 
       title: 'Factory Sourcing', 
       description: 'Direct access to vetted manufacturers in China and Southeast Asia',
-      image: 'https://images.unsplash.com/photo-1591375372226-3e4fbec43a86?w=800&q=80'
+      image: '/images/stock/factory.jpg'
     },
     { 
       title: 'Quality Inspections', 
       description: 'In-line inspections and pre-shipment QC to ensure product standards',
-      image: 'https://images.unsplash.com/photo-1576426863848-c21f53c60b19?w=800&q=80'
+      image: '/images/stock/quality.jpg'
     },
   ];
 
@@ -193,7 +193,7 @@ export default function Home() {
           <div className="relative h-[600px] hidden lg:block">
             <div className="absolute top-0 right-0 w-72 h-96 rounded-[2rem] overflow-hidden shadow-2xl animate-float">
               <Image
-                src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80"
+                src="/images/stock/beauty-products.jpg"
                 alt="Beauty products"
                 fill
                 className="object-cover"
@@ -201,7 +201,7 @@ export default function Home() {
             </div>
             <div className="absolute bottom-0 left-0 w-64 h-80 rounded-[2rem] overflow-hidden shadow-xl animate-float animation-delay-1000">
               <Image
-                src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&q=80"
+                src="/images/stock/skincare-1.jpg"
                 alt="Cosmetics"
                 fill
                 className="object-cover"
@@ -385,12 +385,12 @@ export default function Home() {
         <div className="overflow-x-auto hide-scrollbar">
           <div className="flex gap-6 px-6 pb-8" style={{ width: 'max-content' }}>
             {[
-              { name: 'Skincare & Cosmetics', image: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500&q=80' },
-              { name: 'Beauty Devices', image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500&q=80' },
-              { name: 'Cloth & Garment', image: 'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=500&q=80' },
-              { name: 'Sport Items', image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500&q=80' },
-              { name: 'Household Goods', image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=500&q=80' },
-              { name: 'FMCG', image: 'https://images.unsplash.com/photo-1556740758-90de374c12ad?w=500&q=80' },
+              { name: 'Skincare & Cosmetics', image: '/images/stock/skincare-1.jpg' },
+              { name: 'Beauty Devices', image: '/images/stock/beauty-products.jpg' },
+              { name: 'Cloth & Garment', image: '/images/stock/garment.jpg' },
+              { name: 'Sport Items', image: '/images/stock/sports.jpg' },
+              { name: 'Household Goods', image: '/images/stock/household.jpg' },
+              { name: 'FMCG', image: '/images/stock/fmcg.jpg' },
             ].map((product, index) => (
               <div 
                 key={index} 
