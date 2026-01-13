@@ -97,7 +97,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="bg-[#FFFBF8] text-[#2D2626] overflow-x-hidden">
+    <main className="bg-[#FDF8F5] text-[#2D2626] overflow-x-hidden">
       {/* Cursor follower */}
       <div 
         className="fixed w-4 h-4 bg-[#C4707E] rounded-full pointer-events-none z-50 mix-blend-difference transition-transform duration-100 hidden lg:block"
@@ -142,8 +142,8 @@ export default function Home() {
       {/* Hero - Full viewport with split design */}
       <section className="min-h-screen relative flex items-center">
         {/* Background gradient orbs */}
-        <div className="absolute top-20 right-20 w-96 h-96 bg-[#F5D6DC] rounded-full blur-[120px] opacity-60" />
-        <div className="absolute bottom-20 left-20 w-80 h-80 bg-[#F8E8DC] rounded-full blur-[100px] opacity-50" />
+        <div className="absolute top-20 right-20 w-96 h-96 bg-[#ECC8D0] rounded-full blur-[120px] opacity-60" />
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-[#F0DDD0] rounded-full blur-[100px] opacity-50" />
         
         <div className="max-w-7xl mx-auto px-6 pt-32 grid lg:grid-cols-2 gap-16 items-center">
           {/* Left - Text */}
@@ -208,7 +208,7 @@ export default function Home() {
               />
             </div>
             {/* Floating accent */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-[#F5D6DC] rounded-full flex items-center justify-center animate-pulse-slow">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-[#ECC8D0] rounded-full flex items-center justify-center animate-pulse-slow">
               <span className="text-4xl font-light text-[#C4707E]">✦</span>
             </div>
           </div>
@@ -284,7 +284,7 @@ export default function Home() {
       </section>
 
       {/* Services - Interactive showcase */}
-      <section id="services" className="py-32 bg-[#FAF5F3]">
+      <section id="services" className="py-32 bg-[#F5EBE8]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <p className="text-[#C4707E] tracking-[0.3em] text-base mb-4">WHAT WE DO</p>
@@ -549,7 +549,7 @@ export default function Home() {
       </section>
 
       {/* Partners - With Logos */}
-      <section className="py-24 bg-[#FAF5F3]">
+      <section className="py-24 bg-[#F5EBE8]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <p className="text-[#C4707E] tracking-[0.3em] text-base mb-4">TRUSTED PARTNERS</p>
@@ -561,8 +561,8 @@ export default function Home() {
           {/* Partner logos - Elegant marquee */}
           <div className="relative overflow-hidden">
             {/* Gradient masks */}
-            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#FAF5F3] to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#FAF5F3] to-transparent z-10" />
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#F5EBE8] to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#F5EBE8] to-transparent z-10" />
             
             <div className="flex animate-marquee">
               {[...Array(2)].map((_, setIndex) => (
@@ -650,8 +650,8 @@ export default function Home() {
       {/* Testimonials - Elegant editorial design */}
       <section className="py-32 relative overflow-hidden">
         {/* Decorative background elements */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#F8E8E8] rounded-full blur-3xl opacity-60" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#F5E8DC] rounded-full blur-3xl opacity-50" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#F0DEDE] rounded-full blur-3xl opacity-60" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#EDD8CC] rounded-full blur-3xl opacity-50" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-[#E8D8D8] rounded-full opacity-30" />
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -720,7 +720,7 @@ export default function Home() {
                   is incredibly responsive.
                 </blockquote>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#F8E8E8] flex items-center justify-center text-[#C4707E] font-medium group-hover:bg-[#C4707E] group-hover:text-white transition-colors">
+                  <div className="w-12 h-12 rounded-full bg-[#F0DEDE] flex items-center justify-center text-[#C4707E] font-medium group-hover:bg-[#C4707E] group-hover:text-white transition-colors">
                     SK
                   </div>
                   <div>
@@ -743,7 +743,7 @@ export default function Home() {
                   From concept to shelf in under 6 months — they made the impossible possible.
                 </blockquote>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#F8E8E8] flex items-center justify-center text-[#C4707E] text-sm font-medium group-hover:bg-[#C4707E] group-hover:text-white transition-colors">
+                  <div className="w-10 h-10 rounded-full bg-[#F0DEDE] flex items-center justify-center text-[#C4707E] text-sm font-medium group-hover:bg-[#C4707E] group-hover:text-white transition-colors">
                     MR
                   </div>
                   <div>
@@ -766,7 +766,7 @@ export default function Home() {
                   The event tattoo service was a hit at our corporate gala. Absolutely loved it.
                 </blockquote>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#F8E8E8] flex items-center justify-center text-[#C4707E] text-sm font-medium group-hover:bg-[#C4707E] group-hover:text-white transition-colors">
+                  <div className="w-10 h-10 rounded-full bg-[#F0DEDE] flex items-center justify-center text-[#C4707E] text-sm font-medium group-hover:bg-[#C4707E] group-hover:text-white transition-colors">
                     JW
                   </div>
                   <div>
@@ -798,7 +798,7 @@ export default function Home() {
                       <p className="font-medium text-[#2D2626] text-lg md:text-right">Anna Novak</p>
                       <p className="text-sm text-[#5D5050] md:text-right">Supply Chain Director, European Retailer</p>
                     </div>
-                    <div className="w-14 h-14 rounded-full bg-[#F8E8E8] flex items-center justify-center text-[#C4707E] font-medium group-hover:bg-[#C4707E] group-hover:text-white transition-colors">
+                    <div className="w-14 h-14 rounded-full bg-[#F0DEDE] flex items-center justify-center text-[#C4707E] font-medium group-hover:bg-[#C4707E] group-hover:text-white transition-colors">
                       AN
                     </div>
                   </div>
@@ -866,7 +866,7 @@ export default function Home() {
             </div>
 
             {/* Right - Form */}
-            <div className="bg-[#FAF5F3] p-8 md:p-12 rounded-[2rem]">
+            <div className="bg-[#F5EBE8] p-8 md:p-12 rounded-[2rem]">
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
