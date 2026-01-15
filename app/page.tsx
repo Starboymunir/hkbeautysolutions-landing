@@ -465,7 +465,7 @@ export default function Home() {
                     : 'bg-white/50 border border-[#E8D8D8] hover:border-[#B5525D] hover:shadow-lg'
                 }`}
               >
-                <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" alt="Coolboxbeauty" fill className="object-contain scale-[1.4]" />
+                <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" alt="Coolboxbeauty" fill className="object-contain scale-[1.3]" />
               </button>
               
               {/* COLORFIT Logo Tab */}
@@ -545,15 +545,17 @@ export default function Home() {
                     <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty_1.jpg" alt="Coolboxbeauty" fill className="object-cover" />
                     {/* Logo overlay */}
                     <div className="absolute bottom-6 left-6">
-                      <div className="bg-white/95 backdrop-blur-sm rounded-xl px-5 py-3 shadow-lg">
-                        <span className="text-xl font-bold tracking-tight text-[#1A1A1A]">COOLBOX<span className="text-[#B5525D]">BEAUTY</span></span>
+                      <div className="relative w-44 h-12 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden">
+                        <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" alt="Coolboxbeauty" fill className="object-contain scale-[1.3]" />
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-8">
-                  <h4 className="text-4xl font-light text-[#1A1A1A]">COOLBOX<span className="text-[#B5525D]">BEAUTY</span></h4>
+                  <div className="relative w-56 h-14">
+                    <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" alt="Coolboxbeauty" fill className="object-contain scale-[1.1]" />
+                  </div>
                   <p className="text-lg text-[#3D3636] leading-relaxed">
                     Premium skincare and beauty brand focusing on innovative cooling technology products. We developed the complete brand identity, product formulations, and packaging to create a unique position in the K-beauty inspired market.
                   </p>
@@ -1029,7 +1031,7 @@ export default function Home() {
                 src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" 
                 alt="Coolboxbeauty" 
                 fill 
-                className={`object-contain scale-[1.4] transition-all duration-300 ${activeBrand !== 1 ? 'invert brightness-200' : ''}`} 
+                className={`object-contain scale-[1.3] transition-all duration-300 ${activeBrand !== 1 ? 'invert brightness-200' : ''}`} 
               />
             </button>
             
@@ -1102,15 +1104,17 @@ export default function Home() {
                   <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty_1.jpg" alt="COOLBOXBEAUTY" fill className="object-cover" />
                   {/* Logo overlay */}
                   <div className="absolute bottom-6 left-6">
-                    <div className="bg-white/95 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg">
-                      <span className="text-lg font-bold tracking-tight text-[#1A1A1A]">COOLBOX<span className="text-[#B5525D]">BEAUTY</span></span>
+                    <div className="relative w-44 h-12 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden">
+                      <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" alt="Coolboxbeauty" fill className="object-contain scale-[1.3]" />
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className="space-y-8">
-                <h4 className="text-4xl font-light text-white">COOLBOX<span className="text-[#B5525D]">BEAUTY</span></h4>
+                <div className="relative w-56 h-14">
+                  <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" alt="Coolboxbeauty" fill className="object-contain scale-[1.1] invert brightness-200" />
+                </div>
                 <h5 className="text-2xl font-light text-[#B8A8A8]">Beauty Tools & Skincare Devices</h5>
                 <p className="text-lg text-[#B8A8A8] leading-relaxed">
                   Beauty tools and accessories designed for the modern skincare routine. 
