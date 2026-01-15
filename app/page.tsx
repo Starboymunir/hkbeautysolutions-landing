@@ -459,15 +459,13 @@ export default function Home() {
               {/* COOLBOXBEAUTY Logo Tab */}
               <button
                 onClick={() => setActiveBrandDev(1)}
-                className={`relative h-20 w-44 rounded-2xl transition-all duration-300 overflow-hidden ${
+                className={`relative h-20 w-48 rounded-2xl transition-all duration-300 overflow-hidden ${
                   activeBrandDev === 1 
                     ? 'bg-white shadow-xl shadow-[#B5525D]/20 scale-105 ring-2 ring-[#B5525D]' 
                     : 'bg-white/50 border border-[#E8D8D8] hover:border-[#B5525D] hover:shadow-lg'
                 }`}
               >
-                <div className="w-full h-full flex items-center justify-center">
-                  <span className="text-lg font-bold tracking-tight text-[#1A1A1A]">COOLBOX<span className="text-[#B5525D]">BEAUTY</span></span>
-                </div>
+                <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" alt="Coolboxbeauty" fill className="object-contain p-3" />
               </button>
               
               {/* COLORFIT Logo Tab */}
@@ -1018,7 +1016,7 @@ export default function Home() {
               />
             </button>
             
-            {/* COOLBOXBEAUTY Styled Text Tab */}
+            {/* COOLBOXBEAUTY Logo Tab */}
             <button
               onClick={() => setActiveBrand(1)}
               className={`relative h-20 w-52 rounded-2xl transition-all duration-300 overflow-hidden ${
@@ -1027,13 +1025,12 @@ export default function Home() {
                   : 'bg-transparent border border-[#4A4040] hover:border-[#B5525D]'
               }`}
             >
-              <div className="w-full h-full flex items-center justify-center">
-                <span className={`text-lg font-bold tracking-tight transition-colors duration-300 ${
-                  activeBrand === 1 
-                    ? 'text-[#1A1A1A]' 
-                    : 'text-white'
-                }`}>COOLBOX<span className="text-[#B5525D]">BEAUTY</span></span>
-              </div>
+              <Image 
+                src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" 
+                alt="Coolboxbeauty" 
+                fill 
+                className={`object-contain p-3 transition-all duration-300 ${activeBrand !== 1 ? 'invert brightness-200' : ''}`} 
+              />
             </button>
             
             {/* COLORFIT Logo Tab */}
