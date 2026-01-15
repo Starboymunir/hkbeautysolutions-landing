@@ -1190,9 +1190,9 @@ export default function Home() {
             <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#F5EBE8] to-transparent z-10" />
             <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#F5EBE8] to-transparent z-10" />
             
-            <div className="flex animate-marquee">
-              {[...Array(2)].map((_, setIndex) => (
-                <div key={setIndex} className="flex items-center gap-16 px-8">
+            <div className="flex animate-marquee whitespace-nowrap">
+              {[...Array(4)].map((_, setIndex) => (
+                <div key={setIndex} className="flex items-center gap-12 md:gap-16 px-6 md:px-8 flex-shrink-0">
                   {[
                     { name: 'Amazon', logo: '/images/amazon.png' },
                     { name: 'TEMU', logo: '/images/temu.png' },
@@ -1207,7 +1207,7 @@ export default function Home() {
                   ].map((partner, index) => (
                     <div 
                       key={`${setIndex}-${index}`}
-                      className="relative w-32 h-16 flex-shrink-0 hover:scale-110 transition-transform duration-300"
+                      className="relative w-24 md:w-32 h-12 md:h-16 flex-shrink-0 hover:scale-110 transition-transform duration-300"
                     >
                       <Image 
                         src={partner.logo}

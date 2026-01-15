@@ -108,7 +108,7 @@ html {
 }
 
 .animate-marquee {
-  animation: marquee 6s linear infinite;
+  animation: marquee 12s linear infinite;
 }
 
 /* Selection color */
