@@ -999,185 +999,154 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Brand Selector Tabs */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {['Rebel Tattoos', 'COOLBOXBEAUTY', 'COLORFIT'].map((brand, index) => (
-              <button
-                key={brand}
-                onClick={() => { setActiveBrand(index); setActiveBrandImage(0); }}
-                className={`px-8 py-4 rounded-full text-lg font-light transition-all duration-300 ${
-                  activeBrand === index 
-                    ? 'bg-[#B5525D] text-white shadow-lg shadow-[#B5525D]/30' 
-                    : 'border border-[#4A4040] text-[#B8A8A8] hover:border-[#B5525D] hover:text-white'
-                }`}
-              >
-                {brand}
-              </button>
-            ))}
+          {/* Brand Selector Tabs - Logo Images */}
+          <div className="flex flex-wrap justify-center gap-6 mb-16">
+            {/* Rebel Tattoos Logo Tab */}
+            <button
+              onClick={() => setActiveBrand(0)}
+              className={`relative h-20 w-48 rounded-2xl transition-all duration-300 overflow-hidden ${
+                activeBrand === 0 
+                  ? 'bg-white shadow-xl shadow-[#B5525D]/30 scale-105 ring-2 ring-[#B5525D]' 
+                  : 'bg-white/10 border border-[#4A4040] hover:border-[#B5525D] hover:bg-white/20'
+              }`}
+            >
+              <Image src="/Photo of brands/Rebel Tatttoos/Rebel Tattoos _logo (2) (1).png" alt="Rebel Tattoos" fill className="object-contain p-3" />
+            </button>
+            
+            {/* COOLBOXBEAUTY Styled Text Tab */}
+            <button
+              onClick={() => setActiveBrand(1)}
+              className={`relative h-20 w-52 rounded-2xl transition-all duration-300 overflow-hidden ${
+                activeBrand === 1 
+                  ? 'bg-white shadow-xl shadow-[#B5525D]/30 scale-105 ring-2 ring-[#B5525D]' 
+                  : 'bg-white/10 border border-[#4A4040] hover:border-[#B5525D] hover:bg-white/20'
+              }`}
+            >
+              <div className="w-full h-full flex items-center justify-center">
+                <span className="text-lg font-bold tracking-tight text-[#1A1A1A]">COOLBOX<span className="text-[#B5525D]">BEAUTY</span></span>
+              </div>
+            </button>
+            
+            {/* COLORFIT Logo Tab */}
+            <button
+              onClick={() => setActiveBrand(2)}
+              className={`relative h-16 w-56 rounded-2xl transition-all duration-300 overflow-hidden ${
+                activeBrand === 2 
+                  ? 'bg-white shadow-xl shadow-[#B5525D]/30 scale-105 ring-2 ring-[#B5525D]' 
+                  : 'bg-white/10 border border-[#4A4040] hover:border-[#B5525D] hover:bg-white/20'
+              }`}
+            >
+              <Image src="/Photo of brands/Colorfit/logo_colorfit/svg/black&pink-cropped.svg" alt="Colorfit" fill className="object-contain scale-150" />
+            </button>
           </div>
 
-          {/* Dynamic Brand Gallery */}
+          {/* Rebel Tattoos Showcase - Single Hero Image */}
           {activeBrand === 0 && (
-            <div className="grid lg:grid-cols-12 gap-8">
-              {/* Main large image */}
-              <div className="lg:col-span-7 relative h-[500px] rounded-3xl overflow-hidden group">
-                <Image 
-                  src={[
-                    '/Photo of brands/Rebel Tatttoos/Rebel Tattoos _logo (2) (1).png',
-                    '/Photo of brands/Rebel Tatttoos/eye liner star white bg.jpg',
-                    '/Photo of brands/Rebel Tatttoos/pink eyeliner heart amazon 6.jpg',
-                    '/Photo of brands/Rebel Tatttoos/violet eyeliner butterfly amazon 4 (1).jpg',
-                    '/Photo of brands/Rebel Tatttoos/blue stars Amazon 1.2 (1).jpg',
-                    '/Photo of brands/Rebel Tatttoos/Snow Amazon 56.jpg',
-                    '/Photo of brands/Rebel Tatttoos/space Amazon 3 (1).jpg',
-                    '/Photo of brands/Rebel Tatttoos/artistic Amazon 4 (1).jpg',
-                  ][activeBrandImage]}
-                  alt="Rebel Tattoos"
-                  fill
-                  className={activeBrandImage === 0 ? "object-contain bg-white p-8" : "object-cover"}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
-              {/* Side info + thumbnails */}
-              <div className="lg:col-span-5 flex flex-col justify-between">
-                <div className="space-y-6">
-                  <h3 className="text-4xl font-light text-[#B5525D]">Rebel Tattoos</h3>
-                  <p className="text-[#B8A8A8] text-lg leading-relaxed">
-                    Premium temporary tattoos for fashion, events, and self-expression. 
-                    Sold on Amazon and in retail stores across USA, Europe, and Asia.
-                  </p>
-                  <div className="flex flex-wrap gap-3">
-                    {['Temporary Tattoos', 'Amazon Bestseller', 'Event Services'].map((tag, i) => (
-                      <span key={i} className="px-4 py-2 border border-[#B5525D] rounded-full text-sm text-[#B5525D]">
-                        {tag}
-                      </span>
-                    ))}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Single Hero Image with elegant frame */}
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#B5525D] to-[#E8B4B8] rounded-[2.5rem] transform rotate-2 group-hover:rotate-3 transition-transform duration-500" />
+                <div className="relative aspect-square rounded-[2rem] overflow-hidden shadow-2xl shadow-[#B5525D]/30 bg-white">
+                  <Image src="/Photo of brands/Rebel Tatttoos/artistic Amazon 4 (1).jpg" alt="Rebel Tattoos" fill className="object-cover" />
+                  {/* Logo overlay */}
+                  <div className="absolute bottom-6 left-6">
+                    <div className="relative w-36 h-14 bg-white/95 backdrop-blur-sm rounded-xl p-2 shadow-lg">
+                      <Image src="/Photo of brands/Rebel Tatttoos/Rebel Tattoos _logo (2) (1).png" alt="Rebel Tattoos" fill className="object-contain" />
+                    </div>
                   </div>
                 </div>
-                {/* Thumbnail grid */}
-                <div className="grid grid-cols-4 gap-3 mt-8">
-                  {[
-                    '/Photo of brands/Rebel Tatttoos/Rebel Tattoos _logo (2) (1).png',
-                    '/Photo of brands/Rebel Tatttoos/eye liner star white bg.jpg',
-                    '/Photo of brands/Rebel Tatttoos/pink eyeliner heart amazon 6.jpg',
-                    '/Photo of brands/Rebel Tatttoos/violet eyeliner butterfly amazon 4 (1).jpg',
-                    '/Photo of brands/Rebel Tatttoos/blue stars Amazon 1.2 (1).jpg',
-                    '/Photo of brands/Rebel Tatttoos/Snow Amazon 56.jpg',
-                    '/Photo of brands/Rebel Tatttoos/space Amazon 3 (1).jpg',
-                    '/Photo of brands/Rebel Tatttoos/artistic Amazon 4 (1).jpg',
-                  ].map((img, i) => (
-                    <button
-                      key={i}
-                      onClick={() => setActiveBrandImage(i)}
-                      className={`relative h-20 rounded-xl overflow-hidden transition-all ${
-                        activeBrandImage === i ? 'ring-2 ring-[#B5525D] scale-105' : 'opacity-60 hover:opacity-100'
-                      }`}
-                    >
-                      <Image src={img} alt="" fill className={i === 0 ? "object-contain bg-white p-2" : "object-cover"} />
-                    </button>
-                  ))}
+              </div>
+
+              <div className="space-y-8">
+                <div className="relative w-56 h-20 bg-white rounded-xl p-2">
+                  <Image src="/Photo of brands/Rebel Tatttoos/Rebel Tattoos _logo (2) (1).png" alt="Rebel Tattoos Logo" fill className="object-contain" />
+                </div>
+                <h4 className="text-3xl font-light text-white">Premium Temporary Tattoos</h4>
+                <p className="text-lg text-[#B8A8A8] leading-relaxed">
+                  Premium temporary tattoos for fashion, events, and self-expression. 
+                  Sold on Amazon and in retail stores across USA, Europe, and Asia.
+                </p>
+                <div className="space-y-4">
+                  <h5 className="text-sm tracking-widest text-[#B5525D] uppercase">Key Highlights</h5>
+                  <div className="flex flex-wrap gap-3">
+                    {['Temporary Tattoos', 'Amazon Bestseller', 'Event Services', 'Global Distribution'].map((item) => (
+                      <span key={item} className="px-4 py-2 border border-[#B5525D] rounded-full text-sm text-[#B5525D]">{item}</span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
           )}
 
+          {/* COOLBOXBEAUTY Showcase - Single Hero Image */}
           {activeBrand === 1 && (
-            <div className="grid lg:grid-cols-12 gap-8">
-              <div className="lg:col-span-7 relative h-[500px] rounded-3xl overflow-hidden group">
-                <Image 
-                  src={[
-                    '/Photo of brands/Coolboxbeauty/coolboxbeauty_1.jpg',
-                    '/Photo of brands/Coolboxbeauty/mask.jpg',
-                    '/Photo of brands/Coolboxbeauty/mask2.jpg',
-                    '/Photo of brands/Coolboxbeauty/package.jpg',
-                  ][activeBrandImage % 4]}
-                  alt="COOLBOXBEAUTY"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="lg:col-span-5 flex flex-col justify-between">
-                <div className="space-y-6">
-                  <h3 className="text-4xl font-light text-[#B5525D]">COOLBOXBEAUTY</h3>
-                  <p className="text-[#B8A8A8] text-lg leading-relaxed">
-                    Beauty tools and accessories designed for the modern skincare routine. 
-                    Ice rollers, gua sha, and innovative beauty devices.
-                  </p>
-                  <div className="flex flex-wrap gap-3">
-                    {['Beauty Tools', 'Skincare Devices', 'Self-Care'].map((tag, i) => (
-                      <span key={i} className="px-4 py-2 border border-[#B5525D] rounded-full text-sm text-[#B5525D]">
-                        {tag}
-                      </span>
-                    ))}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Single Hero Image with elegant frame */}
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#B5525D] to-[#E8B4B8] rounded-[2.5rem] transform -rotate-1 group-hover:-rotate-2 transition-transform duration-500" />
+                <div className="relative aspect-square rounded-[2rem] overflow-hidden shadow-2xl shadow-[#B5525D]/30 bg-white">
+                  <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty_1.jpg" alt="COOLBOXBEAUTY" fill className="object-cover" />
+                  {/* Logo overlay */}
+                  <div className="absolute bottom-6 left-6">
+                    <div className="bg-white/95 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg">
+                      <span className="text-lg font-bold tracking-tight text-[#1A1A1A]">COOLBOX<span className="text-[#B5525D]">BEAUTY</span></span>
+                    </div>
                   </div>
                 </div>
-                <div className="grid grid-cols-4 gap-3 mt-8">
-                  {[
-                    '/Photo of brands/Coolboxbeauty/coolboxbeauty_1.jpg',
-                    '/Photo of brands/Coolboxbeauty/mask.jpg',
-                    '/Photo of brands/Coolboxbeauty/mask2.jpg',
-                    '/Photo of brands/Coolboxbeauty/package.jpg',
-                  ].map((img, i) => (
-                    <button
-                      key={i}
-                      onClick={() => setActiveBrandImage(i)}
-                      className={`relative h-20 rounded-xl overflow-hidden transition-all ${
-                        activeBrandImage % 4 === i ? 'ring-2 ring-[#B5525D] scale-105' : 'opacity-60 hover:opacity-100'
-                      }`}
-                    >
-                      <Image src={img} alt="" fill className="object-cover" />
-                    </button>
-                  ))}
+              </div>
+
+              <div className="space-y-8">
+                <h4 className="text-4xl font-light text-white">COOLBOX<span className="text-[#B5525D]">BEAUTY</span></h4>
+                <h5 className="text-2xl font-light text-[#B8A8A8]">Beauty Tools & Skincare Devices</h5>
+                <p className="text-lg text-[#B8A8A8] leading-relaxed">
+                  Beauty tools and accessories designed for the modern skincare routine. 
+                  Ice rollers, gua sha, and innovative beauty devices for self-care rituals.
+                </p>
+                <div className="space-y-4">
+                  <h5 className="text-sm tracking-widest text-[#B5525D] uppercase">Key Highlights</h5>
+                  <div className="flex flex-wrap gap-3">
+                    {['Beauty Tools', 'Skincare Devices', 'Self-Care', 'Ice Therapy'].map((item) => (
+                      <span key={item} className="px-4 py-2 border border-[#B5525D] rounded-full text-sm text-[#B5525D]">{item}</span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
           )}
 
+          {/* COLORFIT Showcase - Single Hero Image */}
           {activeBrand === 2 && (
-            <div className="grid lg:grid-cols-12 gap-8">
-              <div className="lg:col-span-7 relative h-[500px] rounded-3xl overflow-hidden group">
-                <Image 
-                  src={[
-                    '/Photo of brands/Colorfit/colorfit.jpg',
-                    '/Photo of brands/Colorfit/colorfit 1.jpeg',
-                    '/Photo of brands/Colorfit/colorfit_2.jpeg',
-                  ][activeBrandImage % 3]}
-                  alt="COLORFIT"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="lg:col-span-5 flex flex-col justify-between">
-                <div className="space-y-6">
-                  <h3 className="text-4xl font-light text-[#B5525D]">COLORFIT</h3>
-                  <p className="text-[#B8A8A8] text-lg leading-relaxed">
-                    Activewear and fitness apparel that combines style with performance. 
-                    Featured at Pink Ribbon charity events in Hong Kong.
-                  </p>
-                  <div className="flex flex-wrap gap-3">
-                    {['Activewear', 'Fitness Apparel', 'Event Sponsor'].map((tag, i) => (
-                      <span key={i} className="px-4 py-2 border border-[#B5525D] rounded-full text-sm text-[#B5525D]">
-                        {tag}
-                      </span>
-                    ))}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Single Hero Image with elegant frame */}
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#1A1A1A] to-[#3D3636] rounded-[2.5rem] transform rotate-1 group-hover:rotate-2 transition-transform duration-500" />
+                <div className="relative aspect-square rounded-[2rem] overflow-hidden shadow-2xl shadow-[#1A1A1A]/50 bg-white">
+                  <Image src="/Photo of brands/Colorfit/colorfit.jpg" alt="Colorfit" fill className="object-cover" />
+                  {/* Logo overlay */}
+                  <div className="absolute bottom-6 left-6">
+                    <div className="relative w-52 h-12 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden">
+                      <Image src="/Photo of brands/Colorfit/logo_colorfit/svg/black&pink-cropped.svg" alt="Colorfit" fill className="object-contain scale-125" />
+                    </div>
                   </div>
                 </div>
-                <div className="grid grid-cols-3 gap-3 mt-8">
-                  {[
-                    '/Photo of brands/Colorfit/colorfit.jpg',
-                    '/Photo of brands/Colorfit/colorfit 1.jpeg',
-                    '/Photo of brands/Colorfit/colorfit_2.jpeg',
-                  ].map((img, i) => (
-                    <button
-                      key={i}
-                      onClick={() => setActiveBrandImage(i)}
-                      className={`relative h-20 rounded-xl overflow-hidden transition-all ${
-                        activeBrandImage % 3 === i ? 'ring-2 ring-[#B5525D] scale-105' : 'opacity-60 hover:opacity-100'
-                      }`}
-                    >
-                      <Image src={img} alt="" fill className="object-cover" />
-                    </button>
-                  ))}
+              </div>
+
+              <div className="space-y-8">
+                <div className="relative w-72 h-16">
+                  <Image src="/Photo of brands/Colorfit/logo_colorfit/svg/black&pink-cropped.svg" alt="Colorfit Logo" fill className="object-contain scale-110" />
+                </div>
+                <h4 className="text-3xl font-light text-white">Sports & Fitness Apparel</h4>
+                <p className="text-lg text-[#B8A8A8] leading-relaxed">
+                  Activewear and fitness apparel that combines style with performance. 
+                  Featured at Pink Ribbon charity events in Hong Kong.
+                </p>
+                <div className="space-y-4">
+                  <h5 className="text-sm tracking-widest text-[#B5525D] uppercase">Key Highlights</h5>
+                  <div className="flex flex-wrap gap-3">
+                    {['Activewear', 'Fitness Apparel', 'Event Sponsor', 'Pink Ribbon'].map((item) => (
+                      <span key={item} className="px-4 py-2 border border-[#B5525D] rounded-full text-sm text-[#B5525D]">{item}</span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
