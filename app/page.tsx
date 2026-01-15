@@ -465,7 +465,7 @@ export default function Home() {
                     : 'bg-white/50 border border-[#E8D8D8] hover:border-[#B5525D] hover:shadow-lg'
                 }`}
               >
-                <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" alt="Coolboxbeauty" fill className="object-contain scale-[1.8]" />
+                <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" alt="Coolboxbeauty" fill className="object-contain scale-[1.4]" />
               </button>
               
               {/* COLORFIT Logo Tab */}
@@ -1029,7 +1029,7 @@ export default function Home() {
                 src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" 
                 alt="Coolboxbeauty" 
                 fill 
-                className={`object-contain scale-[1.8] transition-all duration-300 ${activeBrand !== 1 ? 'invert brightness-200' : ''}`} 
+                className={`object-contain scale-[1.4] transition-all duration-300 ${activeBrand !== 1 ? 'invert brightness-200' : ''}`} 
               />
             </button>
             
