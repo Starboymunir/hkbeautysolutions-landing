@@ -459,7 +459,7 @@ export default function Home() {
               {/* COOLBOXBEAUTY Logo Tab */}
               <button
                 onClick={() => setActiveBrandDev(1)}
-                className={`relative h-16 w-56 rounded-2xl transition-all duration-300 overflow-hidden ${
+                className={`relative h-20 w-56 rounded-2xl transition-all duration-300 overflow-hidden ${
                   activeBrandDev === 1 
                     ? 'bg-white shadow-xl shadow-[#B5525D]/20 scale-105 ring-2 ring-[#B5525D]' 
                     : 'bg-white/50 border border-[#E8D8D8] hover:border-[#B5525D] hover:shadow-lg'
@@ -545,16 +545,16 @@ export default function Home() {
                     <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty_1.jpg" alt="Coolboxbeauty" fill className="object-cover" />
                     {/* Logo overlay */}
                     <div className="absolute bottom-6 left-6">
-                      <div className="relative w-44 h-12 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden">
-                        <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" alt="Coolboxbeauty" fill className="object-contain scale-[1.3]" />
+                      <div className="relative w-48 h-14 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden">
+                        <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" alt="Coolboxbeauty" fill className="object-contain scale-[1.8]" />
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-8">
-                  <div className="relative w-56 h-14">
-                    <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" alt="Coolboxbeauty" fill className="object-contain scale-[1.1]" />
+                  <div className="relative w-64 h-16">
+                    <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" alt="Coolboxbeauty" fill className="object-contain scale-[1.8]" />
                   </div>
                   <p className="text-lg text-[#3D3636] leading-relaxed">
                     Premium skincare and beauty brand focusing on innovative cooling technology products. We developed the complete brand identity, product formulations, and packaging to create a unique position in the K-beauty inspired market.
@@ -1021,7 +1021,7 @@ export default function Home() {
             {/* COOLBOXBEAUTY Logo Tab */}
             <button
               onClick={() => setActiveBrand(1)}
-              className={`relative h-16 w-56 rounded-2xl transition-all duration-300 overflow-hidden ${
+              className={`relative h-20 w-56 rounded-2xl transition-all duration-300 overflow-hidden ${
                 activeBrand === 1 
                   ? 'bg-white shadow-xl shadow-[#B5525D]/30 scale-105 ring-2 ring-[#B5525D]' 
                   : 'bg-transparent border border-[#4A4040] hover:border-[#B5525D]'
@@ -1104,16 +1104,16 @@ export default function Home() {
                   <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty_1.jpg" alt="COOLBOXBEAUTY" fill className="object-cover" />
                   {/* Logo overlay */}
                   <div className="absolute bottom-6 left-6">
-                    <div className="relative w-44 h-12 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden">
-                      <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" alt="Coolboxbeauty" fill className="object-contain scale-[1.3]" />
+                    <div className="relative w-48 h-14 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden">
+                      <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" alt="Coolboxbeauty" fill className="object-contain scale-[1.8]" />
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className="space-y-8">
-                <div className="relative w-56 h-14">
-                  <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" alt="Coolboxbeauty" fill className="object-contain scale-[1.1] invert brightness-200" />
+                <div className="relative w-64 h-16">
+                  <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" alt="Coolboxbeauty" fill className="object-contain scale-[1.8] invert brightness-200" />
                 </div>
                 <h5 className="text-2xl font-light text-[#B8A8A8]">Beauty Tools & Skincare Devices</h5>
                 <p className="text-lg text-[#B8A8A8] leading-relaxed">
