@@ -167,19 +167,16 @@ export default function Home() {
         scrolled ? 'bg-white/90 backdrop-blur-md py-4' : 'bg-transparent py-6'
       }`}>
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          {/* Elegant Text-Based Logo */}
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="flex flex-col items-center leading-none">
-              <span className="text-2xl font-extralight tracking-tight text-[#1A1A1A] group-hover:text-[#B5525D] transition-colors">
-                Beauty
-              </span>
-              <span className="text-xl font-light italic text-[#B5525D] -mt-1">
-                Solutions
-              </span>
-            </div>
-            <div className="hidden sm:flex flex-col items-start border-l-2 border-[#B5525D]/30 pl-3">
-              <span className="text-[10px] tracking-[0.25em] text-[#3D3636] uppercase">Hong Kong</span>
-              <span className="text-[9px] tracking-[0.2em] text-[#B5525D]">LIMITED</span>
+          {/* Company Logo */}
+          <a href="#" className="flex items-center">
+            <div className="relative h-16 w-64 md:h-20 md:w-72">
+              <Image
+                src="/new logo.png"
+                alt="Beauty Solutions (HK) Limited"
+                fill
+                className="object-contain object-left"
+                priority
+              />
             </div>
           </a>
           
@@ -316,10 +313,17 @@ export default function Home() {
               />
             </div>
             {/* Floating company logo accent */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-44 h-44 bg-white rounded-full flex flex-col items-center justify-center animate-pulse-slow shadow-xl border-4 border-[#B5525D]/20">
-              <span className="text-3xl font-extralight tracking-tighter text-[#1A1A1A]">Beauty</span>
-              <span className="text-2xl font-light italic text-[#B5525D] -mt-1">Solutions</span>
-              <span className="text-[8px] tracking-[0.3em] text-[#3D3636] mt-1">HK LIMITED</span>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse-slow">
+              <div className="relative w-32 h-32 bg-[#FDF8F5] rounded-full flex items-center justify-center shadow-lg">
+                <div className="relative w-24 h-24">
+                  <Image
+                    src="/new logo.png"
+                    alt="Beauty Solutions"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -438,79 +442,66 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Brand Showcase Tabs */}
-            <div className="flex flex-wrap gap-4 mb-12">
-              {['Rebel Tattoos', 'COOLBOXBEAUTY', 'COLORFIT'].map((brand, i) => (
-                <button
-                  key={brand}
-                  onClick={() => setActiveBrandDev(i)}
-                  className={`px-8 py-4 rounded-full text-lg font-light transition-all duration-300 ${
-                    activeBrandDev === i 
-                      ? 'bg-[#B5525D] text-white shadow-xl shadow-[#B5525D]/30 scale-105' 
-                      : 'bg-white border border-[#E8D8D8] text-[#3D3636] hover:border-[#B5525D] hover:text-[#B5525D]'
-                  }`}
-                >
-                  {brand}
-                </button>
-              ))}
+            {/* Brand Logo Tabs */}
+            <div className="flex flex-wrap gap-6 mb-12 justify-center">
+              {/* Rebel Tattoos Logo Tab */}
+              <button
+                onClick={() => setActiveBrandDev(0)}
+                className={`relative h-20 w-44 rounded-2xl transition-all duration-300 overflow-hidden ${
+                  activeBrandDev === 0 
+                    ? 'bg-white shadow-xl shadow-[#B5525D]/20 scale-105 ring-2 ring-[#B5525D]' 
+                    : 'bg-white/50 border border-[#E8D8D8] hover:border-[#B5525D] hover:shadow-lg'
+                }`}
+              >
+                <Image src="/Photo of brands/Rebel Tatttoos/Rebel Tattoos _logo (2) (1).png" alt="Rebel Tattoos" fill className="object-contain p-3" />
+              </button>
+              
+              {/* COOLBOXBEAUTY Logo Tab */}
+              <button
+                onClick={() => setActiveBrandDev(1)}
+                className={`relative h-20 w-44 rounded-2xl transition-all duration-300 overflow-hidden ${
+                  activeBrandDev === 1 
+                    ? 'bg-white shadow-xl shadow-[#B5525D]/20 scale-105 ring-2 ring-[#B5525D]' 
+                    : 'bg-white/50 border border-[#E8D8D8] hover:border-[#B5525D] hover:shadow-lg'
+                }`}
+              >
+                <div className="w-full h-full flex items-center justify-center">
+                  <span className="text-lg font-bold tracking-tight text-[#1A1A1A]">COOLBOX<span className="text-[#B5525D]">BEAUTY</span></span>
+                </div>
+              </button>
+              
+              {/* COLORFIT Logo Tab */}
+              <button
+                onClick={() => setActiveBrandDev(2)}
+                className={`relative h-16 w-56 rounded-2xl transition-all duration-300 overflow-hidden ${
+                  activeBrandDev === 2 
+                    ? 'bg-white shadow-xl shadow-[#B5525D]/20 scale-105 ring-2 ring-[#B5525D]' 
+                    : 'bg-white/50 border border-[#E8D8D8] hover:border-[#B5525D] hover:shadow-lg'
+                }`}
+              >
+                <Image src="/Photo of brands/Colorfit/logo_colorfit/svg/black&pink-cropped.svg" alt="Colorfit" fill className="object-contain scale-150" />
+              </button>
             </div>
 
-            {/* Rebel Tattoos Showcase */}
+            {/* Rebel Tattoos Showcase - Clean Single Image */}
             {activeBrandDev === 0 && (
-              <div className="grid lg:grid-cols-2 gap-12 items-start">
-                {/* Image Gallery */}
-                <div className="space-y-4">
-                  {/* Main featured image */}
-                  <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-[#B5525D]/10 bg-white">
-                    <Image 
-                      src={[
-                        '/Photo of brands/Rebel Tatttoos/artistic Amazon 4 (1).jpg',
-                        '/Photo of brands/Rebel Tatttoos/blue stars Amazon 1.2 (1).jpg',
-                        '/Photo of brands/Rebel Tatttoos/blue stars Amazon 3.jpg',
-                        '/Photo of brands/Rebel Tatttoos/eye liner star white bg.jpg',
-                        '/Photo of brands/Rebel Tatttoos/pink eyeliner heart amazon 6.jpg',
-                        '/Photo of brands/Rebel Tatttoos/Snow 2 вида Amazon 1.jpg',
-                        '/Photo of brands/Rebel Tatttoos/Snow Amazon 56.jpg',
-                        '/Photo of brands/Rebel Tatttoos/space Amazon 3 (1).jpg',
-                        '/Photo of brands/Rebel Tatttoos/violet eyeliner butterfly amazon 4 (1).jpg',
-                      ][activeBrandImage % 9]}
-                      alt="Rebel Tattoos Product"
-                      fill
-                      className="object-contain p-8"
-                    />
-                    {/* Navigation */}
-                    <button onClick={() => setActiveBrandImage(prev => prev - 1 < 0 ? 8 : prev - 1)} className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110">
-                      <svg className="w-5 h-5 text-[#1A1A1A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
-                    </button>
-                    <button onClick={() => setActiveBrandImage(prev => (prev + 1) % 9)} className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110">
-                      <svg className="w-5 h-5 text-[#1A1A1A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                    </button>
-                    <div className="absolute bottom-4 right-4 px-4 py-2 bg-white/90 rounded-full text-sm font-medium text-[#1A1A1A] shadow">
-                      {(activeBrandImage % 9) + 1} / 9
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                {/* Single Hero Image with elegant frame */}
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#B5525D] to-[#E8B4B8] rounded-[2.5rem] transform rotate-2 group-hover:rotate-3 transition-transform duration-500" />
+                  <div className="relative aspect-square rounded-[2rem] overflow-hidden shadow-2xl shadow-[#B5525D]/30 bg-white">
+                    <Image src="/Photo of brands/Rebel Tatttoos/artistic Amazon 4 (1).jpg" alt="Rebel Tattoos" fill className="object-cover" />
+                    {/* Logo overlay */}
+                    <div className="absolute bottom-6 left-6">
+                      <div className="relative w-36 h-14 bg-white/95 backdrop-blur-sm rounded-xl p-2 shadow-lg">
+                        <Image src="/Photo of brands/Rebel Tatttoos/Rebel Tattoos _logo (2) (1).png" alt="Rebel Tattoos" fill className="object-contain" />
+                      </div>
                     </div>
-                  </div>
-                  {/* Thumbnail strip */}
-                  <div className="grid grid-cols-9 gap-2">
-                    {[
-                      '/Photo of brands/Rebel Tatttoos/artistic Amazon 4 (1).jpg',
-                      '/Photo of brands/Rebel Tatttoos/blue stars Amazon 1.2 (1).jpg',
-                      '/Photo of brands/Rebel Tatttoos/blue stars Amazon 3.jpg',
-                      '/Photo of brands/Rebel Tatttoos/eye liner star white bg.jpg',
-                      '/Photo of brands/Rebel Tatttoos/pink eyeliner heart amazon 6.jpg',
-                      '/Photo of brands/Rebel Tatttoos/Snow 2 вида Amazon 1.jpg',
-                      '/Photo of brands/Rebel Tatttoos/Snow Amazon 56.jpg',
-                      '/Photo of brands/Rebel Tatttoos/space Amazon 3 (1).jpg',
-                      '/Photo of brands/Rebel Tatttoos/violet eyeliner butterfly amazon 4 (1).jpg',
-                    ].map((img, i) => (
-                      <button key={i} onClick={() => setActiveBrandImage(i)} className={`relative aspect-square rounded-lg overflow-hidden transition-all ${activeBrandImage % 9 === i ? 'ring-2 ring-[#B5525D] scale-105 z-10' : 'opacity-60 hover:opacity-100'}`}>
-                        <Image src={img} alt="" fill className="object-cover" />
-                      </button>
-                    ))}
                   </div>
                 </div>
 
                 {/* Brand Info */}
-                <div className="space-y-8 lg:sticky lg:top-32">
+                <div className="space-y-8">
                   <div className="relative w-48 h-20">
                     <Image src="/Photo of brands/Rebel Tatttoos/Rebel Tattoos _logo (2) (1).png" alt="Rebel Tattoos Logo" fill className="object-contain" />
                   </div>
@@ -546,59 +537,72 @@ export default function Home() {
               </div>
             )}
 
-            {/* COOLBOXBEAUTY Showcase */}
+            {/* COOLBOXBEAUTY Showcase - Clean Single Image */}
             {activeBrandDev === 1 && (
-              <div className="grid lg:grid-cols-2 gap-12 items-start">
-                <div className="space-y-4">
-                  <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-[#B5525D]/15 bg-white">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                {/* Single Hero Image with elegant frame */}
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#E8B4B8] to-[#F5EBE8] rounded-[2.5rem] transform -rotate-2 group-hover:-rotate-3 transition-transform duration-500" />
+                  <div className="relative aspect-square rounded-[2rem] overflow-hidden shadow-2xl shadow-[#B5525D]/20 bg-white">
                     <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty_1.jpg" alt="Coolboxbeauty" fill className="object-cover" />
-                  </div>
-                  <div className="grid grid-cols-4 gap-2">
-                    {['/Photo of brands/Coolboxbeauty/coolboxbeauty_1.jpg', '/Photo of brands/Coolboxbeauty/mask.jpg', '/Photo of brands/Coolboxbeauty/mask2.jpg', '/Photo of brands/Coolboxbeauty/package.jpg'].map((img, i) => (
-                      <div key={i} className="relative aspect-square rounded-lg overflow-hidden">
-                        <Image src={img} alt="" fill className="object-cover hover:scale-110 transition-transform" />
+                    {/* Logo overlay */}
+                    <div className="absolute bottom-6 left-6">
+                      <div className="bg-white/95 backdrop-blur-sm rounded-xl px-5 py-3 shadow-lg">
+                        <span className="text-xl font-bold tracking-tight text-[#1A1A1A]">COOLBOX<span className="text-[#B5525D]">BEAUTY</span></span>
                       </div>
-                    ))}
+                    </div>
                   </div>
                 </div>
-                <div className="space-y-8 lg:sticky lg:top-32">
-                  <h4 className="text-3xl font-light text-[#1A1A1A]">COOLBOXBEAUTY</h4>
+
+                <div className="space-y-8">
+                  <h4 className="text-4xl font-light text-[#1A1A1A]">COOLBOX<span className="text-[#B5525D]">BEAUTY</span></h4>
                   <p className="text-lg text-[#3D3636] leading-relaxed">
                     Premium skincare and beauty brand focusing on innovative cooling technology products. We developed the complete brand identity, product formulations, and packaging to create a unique position in the K-beauty inspired market.
                   </p>
-                  <div className="flex flex-wrap gap-3">
-                    {['Brand Strategy', 'Product Formulation', 'Packaging Design', 'Market Launch'].map((item) => (
-                      <span key={item} className="px-4 py-2 bg-[#F5EBE8] rounded-full text-sm text-[#3D3636]">{item}</span>
-                    ))}
+                  <div className="space-y-4">
+                    <h5 className="text-sm tracking-widest text-[#B5525D] uppercase">What We Delivered</h5>
+                    <div className="flex flex-wrap gap-3">
+                      {['Brand Strategy', 'Product Formulation', 'Packaging Design', 'Market Launch'].map((item) => (
+                        <span key={item} className="px-4 py-2 bg-[#F5EBE8] rounded-full text-sm text-[#3D3636]">{item}</span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
             )}
 
-            {/* COLORFIT Showcase */}
+            {/* COLORFIT Showcase - Clean Single Image */}
             {activeBrandDev === 2 && (
-              <div className="grid lg:grid-cols-2 gap-12 items-start">
-                <div className="space-y-4">
-                  <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-[#B5525D]/15 bg-white">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                {/* Single Hero Image with elegant frame */}
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#1A1A1A] to-[#3D3636] rounded-[2.5rem] transform rotate-1 group-hover:rotate-2 transition-transform duration-500" />
+                  <div className="relative aspect-square rounded-[2rem] overflow-hidden shadow-2xl shadow-[#1A1A1A]/30 bg-white">
                     <Image src="/Photo of brands/Colorfit/colorfit.jpg" alt="Colorfit" fill className="object-cover" />
-                  </div>
-                  <div className="grid grid-cols-3 gap-2">
-                    {['/Photo of brands/Colorfit/colorfit.jpg', '/Photo of brands/Colorfit/colorfit 1.jpeg', '/Photo of brands/Colorfit/colorfit_2.jpeg'].map((img, i) => (
-                      <div key={i} className="relative aspect-square rounded-lg overflow-hidden">
-                        <Image src={img} alt="" fill className="object-cover hover:scale-110 transition-transform" />
+                    {/* Logo overlay */}
+                    <div className="absolute bottom-6 left-6">
+                      <div className="relative w-52 h-12 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden">
+                        <Image src="/Photo of brands/Colorfit/logo_colorfit/svg/black&pink-cropped.svg" alt="Colorfit" fill className="object-contain scale-125" />
                       </div>
-                    ))}
+                    </div>
                   </div>
                 </div>
-                <div className="space-y-8 lg:sticky lg:top-32">
-                  <h4 className="text-3xl font-light text-[#1A1A1A]">COLORFIT</h4>
+
+                <div className="space-y-8">
+                  <div className="relative w-72 h-16">
+                    <Image src="/Photo of brands/Colorfit/logo_colorfit/svg/black&pink-cropped.svg" alt="Colorfit Logo" fill className="object-contain scale-110" />
+                  </div>
+                  <h4 className="text-3xl font-light text-[#1A1A1A]">Sports & Fitness Beauty</h4>
                   <p className="text-lg text-[#3D3636] leading-relaxed">
                     Sports and active lifestyle beauty brand designed for fitness enthusiasts. Complete brand development including workout-proof cosmetics, sweat-resistant formulations, and sporty packaging design.
                   </p>
-                  <div className="flex flex-wrap gap-3">
-                    {['Sports Focus', 'Sweat-Proof Formulas', 'Active Lifestyle', 'Event Partnerships'].map((item) => (
-                      <span key={item} className="px-4 py-2 bg-[#F5EBE8] rounded-full text-sm text-[#3D3636]">{item}</span>
-                    ))}
+                  <div className="space-y-4">
+                    <h5 className="text-sm tracking-widest text-[#B5525D] uppercase">What We Delivered</h5>
+                    <div className="flex flex-wrap gap-3">
+                      {['Sports Focus', 'Sweat-Proof Formulas', 'Active Lifestyle', 'Event Partnerships'].map((item) => (
+                        <span key={item} className="px-4 py-2 bg-[#F5EBE8] rounded-full text-sm text-[#3D3636]">{item}</span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -606,92 +610,96 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Service 2: Event Activities - Gallery */}
-        <div className="relative py-24 bg-white/50">
-          <div className="max-w-7xl mx-auto px-6 mb-12">
-            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
-              <div className="space-y-4">
-                <span className="text-8xl font-extralight text-[#B5525D]/20">02</span>
-                <h3 className="text-4xl md:text-5xl font-light text-[#1A1A1A] leading-tight">
+        {/* Service 2: Event Activities - Bold Unified Mosaic */}
+        <div className="relative py-24 bg-white/50 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6">
+            {/* Header */}
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
+              <div>
+                <span className="text-8xl md:text-9xl font-extralight text-[#B5525D]/20 leading-none block mb-4">02</span>
+                <h3 className="text-4xl md:text-6xl font-light text-[#1A1A1A] leading-tight">
                   Event<br /><span className="text-[#B5525D] italic">Activities</span>
                 </h3>
               </div>
-              <p className="text-xl text-[#3D3636] max-w-md">
-                Corporate tattoo bars, wedding events, sports sponsorships, nightclub activations, and promotional campaigns.
-              </p>
-            </div>
-          </div>
-          
-          {/* Main featured image - proper aspect ratio */}
-          <div className="max-w-7xl mx-auto px-6 mb-8">
-            <div className="relative aspect-[16/9] rounded-3xl overflow-hidden shadow-2xl shadow-[#B5525D]/20 group">
-              <Image 
-                src={[
-                  '/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/corporate tattoo KHY by Rebel Tattoos.jpg',
-                  '/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Brian and Wendy wedding Х Rebel Tattoos.jpg',
-                  '/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Haloween Tattoo Bar by Rebel Tattoos.jpeg',
-                  '/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Ibiza club event 2025 Х Rebel Tattoos.jpeg',
-                  '/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Pink Ribbon Event at LRC Hong Kong х COLORFIT.jpeg',
-                  '/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Haloween Tattoo Bar by Rebel Tattoos_2.jpeg',
-                  '/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Pink Ribbon Event at LRC Hong Kong х COLORFIT _2.jpeg',
-                  '/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Pink ribbon Event at LRC Hong Kong х COLORFIT.jpg',
-                  '/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Pink Ribbon Event at LRC Hong Kong х COLORFIT_3.jpeg',
-                  '/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Secret Tattoo Bar Х Rebel Tatttoos.jpg',
-                ][activeServiceImage % 10]}
-                alt="Event Activities"
-                fill
-                className="object-contain bg-[#F5EBE8]"
-                sizes="(max-width: 1280px) 100vw, 1280px"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/60 via-transparent to-transparent" />
-              <div className="absolute bottom-8 left-8 right-8">
-                <p className="text-white/80 text-sm tracking-widest mb-2">FEATURED EVENT</p>
-                <p className="text-white text-2xl font-light">
-                  {['Corporate Tattoo Bar - KHY', 'Wedding Event - Brian & Wendy', 'Halloween Tattoo Bar', 'Ibiza Club Event 2025', 'Pink Ribbon Event - Hong Kong', 'Halloween Tattoo Bar 2', 'Pink Ribbon Event 2', 'Pink Ribbon Event 3', 'Pink Ribbon Event 4', 'Secret Tattoo Bar'][activeServiceImage % 10]}
+              <div className="max-w-lg">
+                <p className="text-xl text-[#3D3636] leading-relaxed">
+                  Corporate tattoo bars, wedding events, sports sponsorships, nightclub activations, and promotional campaigns.
                 </p>
               </div>
-              {/* Navigation arrows */}
-              <button onClick={() => setActiveServiceImage(prev => prev - 1 < 0 ? 9 : prev - 1)} className="absolute left-6 top-1/2 -translate-y-1/2 w-14 h-14 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110">
-                <svg className="w-6 h-6 text-[#1A1A1A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
-              </button>
-              <button onClick={() => setActiveServiceImage(prev => (prev + 1) % 10)} className="absolute right-6 top-1/2 -translate-y-1/2 w-14 h-14 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110">
-                <svg className="w-6 h-6 text-[#1A1A1A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-              </button>
-              {/* Image counter */}
-              <div className="absolute top-6 right-6 px-4 py-2 bg-white/90 rounded-full text-[#1A1A1A] text-sm font-medium shadow-lg">
-                {(activeServiceImage % 10) + 1} / 10
+            </div>
+
+            {/* BOLD UNIFIED MOSAIC - Looks like ONE image */}
+            <div className="relative rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(181,82,93,0.4)] bg-[#1A1A1A] p-1">
+              {/* Inner container with tiny gaps */}
+              <div className="grid grid-cols-4 grid-rows-3 gap-[2px] rounded-[2.8rem] overflow-hidden" style={{ aspectRatio: '16/10' }}>
+                {/* Large left - 2x2 */}
+                <div className="col-span-2 row-span-2 relative group cursor-pointer overflow-hidden">
+                  <Image src="/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Brian and Wendy wedding Х Rebel Tattoos.jpg" alt="Wedding" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <span className="text-white text-lg font-light">Wedding Events</span>
+                  </div>
+                </div>
+                
+                {/* Top right - 1x1 */}
+                <div className="relative group cursor-pointer overflow-hidden">
+                  <Image src="/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Haloween Tattoo Bar by Rebel Tattoos.jpeg" alt="Halloween" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-[#B5525D]/0 group-hover:bg-[#B5525D]/40 transition-colors duration-500" />
+                </div>
+                
+                {/* Top right corner - 1x1 */}
+                <div className="relative group cursor-pointer overflow-hidden">
+                  <Image src="/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Ibiza club event 2025 Х Rebel Tattoos.jpeg" alt="Ibiza" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-[#B5525D]/0 group-hover:bg-[#B5525D]/40 transition-colors duration-500" />
+                </div>
+                
+                {/* Middle right - 1x1 */}
+                <div className="relative group cursor-pointer overflow-hidden">
+                  <Image src="/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Pink Ribbon Event at LRC Hong Kong х COLORFIT.jpeg" alt="Pink Ribbon" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-[#B5525D]/0 group-hover:bg-[#B5525D]/40 transition-colors duration-500" />
+                </div>
+                
+                {/* Middle right corner - 1x1 */}
+                <div className="relative group cursor-pointer overflow-hidden">
+                  <Image src="/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Haloween Tattoo Bar by Rebel Tattoos_2.jpeg" alt="Tattoo Bar" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-[#B5525D]/0 group-hover:bg-[#B5525D]/40 transition-colors duration-500" />
+                </div>
+                
+                {/* Bottom row - 4 cells */}
+                <div className="relative group cursor-pointer overflow-hidden">
+                  <Image src="/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Pink Ribbon Event at LRC Hong Kong х COLORFIT _2.jpeg" alt="Charity" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-[#B5525D]/0 group-hover:bg-[#B5525D]/40 transition-colors duration-500" />
+                </div>
+                
+                <div className="relative group cursor-pointer overflow-hidden">
+                  <Image src="/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Pink ribbon Event at LRC Hong Kong х COLORFIT.jpg" alt="Corporate" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-[#B5525D]/0 group-hover:bg-[#B5525D]/40 transition-colors duration-500" />
+                </div>
+                
+                <div className="relative group cursor-pointer overflow-hidden">
+                  <Image src="/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Pink Ribbon Event at LRC Hong Kong х COLORFIT_3.jpeg" alt="Sports" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-[#B5525D]/0 group-hover:bg-[#B5525D]/40 transition-colors duration-500" />
+                </div>
+                
+                <div className="relative group cursor-pointer overflow-hidden">
+                  <Image src="/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Secret Tattoo Bar Х Rebel Tatttoos.jpg" alt="Secret Bar" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-[#B5525D]/0 group-hover:bg-[#B5525D]/40 transition-colors duration-500" />
+                </div>
+              </div>
+              
+              {/* Floating label */}
+              <div className="absolute bottom-6 right-6 px-6 py-3 bg-white/95 backdrop-blur-sm rounded-full shadow-xl">
+                <span className="text-[#1A1A1A] font-medium">9 Events Showcased</span>
               </div>
             </div>
-          </div>
-          
-          {/* Thumbnail row - proper aspect ratio */}
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-5 md:grid-cols-10 gap-3">
-              {[
-                '/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/corporate tattoo KHY by Rebel Tattoos.jpg',
-                '/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Brian and Wendy wedding Х Rebel Tattoos.jpg',
-                '/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Haloween Tattoo Bar by Rebel Tattoos.jpeg',
-                '/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Ibiza club event 2025 Х Rebel Tattoos.jpeg',
-                '/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Pink Ribbon Event at LRC Hong Kong х COLORFIT.jpeg',
-                '/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Haloween Tattoo Bar by Rebel Tattoos_2.jpeg',
-                '/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Pink Ribbon Event at LRC Hong Kong х COLORFIT _2.jpeg',
-                '/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Pink ribbon Event at LRC Hong Kong х COLORFIT.jpg',
-                '/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Pink Ribbon Event at LRC Hong Kong х COLORFIT_3.jpeg',
-                '/Events Services_ Corporate Tatttoo_Tattoos Bars_Custom Tattoos for night club_Sport Events gear sponsorship/Secret Tattoo Bar Х Rebel Tatttoos.jpg',
-              ].map((img, i) => (
-                <button key={i} onClick={() => setActiveServiceImage(i)} className={`relative aspect-square rounded-xl overflow-hidden transition-all duration-300 shadow-md ${activeServiceImage % 10 === i ? 'ring-4 ring-[#B5525D] scale-105 z-10 shadow-xl' : 'hover:scale-105 hover:shadow-lg'}`}>
-                  <Image src={img} alt="" fill className="object-cover" />
-                </button>
-              ))}
-            </div>
-          </div>
 
-          {/* Event types tags */}
-          <div className="max-w-7xl mx-auto px-6 mt-12">
-            <div className="flex flex-wrap gap-4 justify-center">
-              {['Corporate Events', 'Weddings', 'Nightclubs', 'Sports Sponsorship', 'Charity Events', 'Tattoo Bars'].map((tag) => (
-                <span key={tag} className="px-6 py-3 bg-[#B5525D]/10 border border-[#B5525D]/30 rounded-full text-[#B5525D] text-sm font-medium hover:bg-[#B5525D]/20 transition-colors cursor-default">{tag}</span>
-              ))}
+            {/* Event types tags */}
+            <div className="mt-12">
+              <div className="flex flex-wrap gap-4 justify-center">
+                {['Corporate Events', 'Weddings', 'Nightclubs', 'Sports Sponsorship', 'Charity Events', 'Tattoo Bars'].map((tag) => (
+                  <span key={tag} className="px-6 py-3 bg-[#B5525D]/10 border border-[#B5525D]/30 rounded-full text-[#B5525D] text-sm font-medium hover:bg-[#B5525D]/20 transition-colors cursor-default">{tag}</span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -747,8 +755,8 @@ export default function Home() {
         <div className="relative py-24 bg-gradient-to-r from-[#B5525D]/5 via-white to-[#B5525D]/5">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-[#B5525D]/20 order-2 lg:order-1">
-                <Image src="/AI service/photo for ai.png" alt="AI Content" fill className="object-cover" />
+              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl shadow-[#B5525D]/20 order-2 lg:order-1">
+                <Image src="/AI service/photo for ai.png" alt="AI Content" fill className="object-contain bg-[#F5EBE8]" />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#B5525D]/20 to-transparent" />
               </div>
               <div className="space-y-6 order-1 lg:order-2">
@@ -928,14 +936,14 @@ export default function Home() {
             </div>
 
             {/* Sport Items */}
-            <div className="col-span-2 md:col-span-2 group relative rounded-[2rem] overflow-hidden bg-gradient-to-br from-[#1A1A1A] to-[#4A4040] p-6 text-white">
-              <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-4 group-hover:bg-[#B5525D] transition-colors">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="col-span-2 md:col-span-2 group relative rounded-[2rem] overflow-hidden bg-[#F5EBE8] p-6 hover:bg-[#B5525D]/10 transition-all">
+              <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-4 group-hover:bg-[#B5525D] transition-colors shadow-sm">
+                <svg className="w-6 h-6 text-[#B5525D] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
                 </svg>
               </div>
-              <h3 className="text-xl font-light mb-2">Sport <span className="text-[#B5525D] italic">Items</span></h3>
-              <p className="text-sm text-white/70">Fitness equipment, yoga gear, sports accessories</p>
+              <h3 className="text-xl font-light text-[#1A1A1A] mb-2">Sport <span className="text-[#B5525D] italic">Items</span></h3>
+              <p className="text-sm text-[#3D3636]">Fitness equipment, yoga gear, sports accessories</p>
             </div>
 
             {/* Household Goods */}
@@ -1640,19 +1648,15 @@ export default function Home() {
       <footer className="py-12 border-t border-[#E8D8D8]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            {/* Footer Text Logo */}
-            <a href="#" className="flex items-center gap-3 group">
-              <div className="flex flex-col items-center leading-none">
-                <span className="text-xl font-extralight tracking-tight text-[#1A1A1A] group-hover:text-[#B5525D] transition-colors">
-                  Beauty
-                </span>
-                <span className="text-lg font-light italic text-[#B5525D] -mt-1">
-                  Solutions
-                </span>
-              </div>
-              <div className="flex flex-col items-start border-l-2 border-[#B5525D]/30 pl-3">
-                <span className="text-[9px] tracking-[0.25em] text-[#3D3636] uppercase">Hong Kong</span>
-                <span className="text-[8px] tracking-[0.2em] text-[#B5525D]">LIMITED</span>
+            {/* Footer Logo */}
+            <a href="#" className="flex items-center">
+              <div className="relative h-14 w-56">
+                <Image
+                  src="/new logo.png"
+                  alt="Beauty Solutions (HK) Limited"
+                  fill
+                  className="object-contain object-left"
+                />
               </div>
             </a>
 

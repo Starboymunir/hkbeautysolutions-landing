@@ -108,7 +108,7 @@ html {
 }
 
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 15s linear infinite;
 }
 
 /* Selection color */
@@ -140,8 +140,8 @@ h1, h2, h3, h4, h5, h6 {
   font-style: italic;
   font-weight: 300;
 }
-
-/* Image loading placeholder */
-img {
-  background: linear-gradient(135deg, #FAF5F3 0%, #F5D6DC 100%);
+img{
+  background-image: none !important;
 }
+
+/* Image loading placeholder - removed for transparent logos */
