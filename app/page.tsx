@@ -459,13 +459,13 @@ export default function Home() {
               {/* COOLBOXBEAUTY Logo Tab */}
               <button
                 onClick={() => setActiveBrandDev(1)}
-                className={`relative h-20 w-48 rounded-2xl transition-all duration-300 overflow-hidden ${
+                className={`relative h-16 w-56 rounded-2xl transition-all duration-300 overflow-hidden ${
                   activeBrandDev === 1 
                     ? 'bg-white shadow-xl shadow-[#B5525D]/20 scale-105 ring-2 ring-[#B5525D]' 
                     : 'bg-white/50 border border-[#E8D8D8] hover:border-[#B5525D] hover:shadow-lg'
                 }`}
               >
-                <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" alt="Coolboxbeauty" fill className="object-contain p-3" />
+                <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" alt="Coolboxbeauty" fill className="object-contain scale-[1.8]" />
               </button>
               
               {/* COLORFIT Logo Tab */}
@@ -1019,7 +1019,7 @@ export default function Home() {
             {/* COOLBOXBEAUTY Logo Tab */}
             <button
               onClick={() => setActiveBrand(1)}
-              className={`relative h-20 w-52 rounded-2xl transition-all duration-300 overflow-hidden ${
+              className={`relative h-16 w-56 rounded-2xl transition-all duration-300 overflow-hidden ${
                 activeBrand === 1 
                   ? 'bg-white shadow-xl shadow-[#B5525D]/30 scale-105 ring-2 ring-[#B5525D]' 
                   : 'bg-transparent border border-[#4A4040] hover:border-[#B5525D]'
@@ -1029,7 +1029,7 @@ export default function Home() {
                 src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" 
                 alt="Coolboxbeauty" 
                 fill 
-                className={`object-contain p-3 transition-all duration-300 ${activeBrand !== 1 ? 'invert brightness-200' : ''}`} 
+                className={`object-contain scale-[1.8] transition-all duration-300 ${activeBrand !== 1 ? 'invert brightness-200' : ''}`} 
               />
             </button>
             
