@@ -190,7 +190,7 @@ export default function Home() {
               <a 
                 key={item.label} 
                 href={item.href}
-                className="text-sm tracking-wider hover:text-[#B5525D] transition-colors relative group"
+                className="text-base font-medium tracking-wide hover:text-[#B5525D] transition-colors relative group"
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#B5525D] group-hover:w-full transition-all duration-300" />
@@ -252,7 +252,7 @@ export default function Home() {
           <div className="space-y-8">
             <div className="overflow-hidden">
               <p className="text-[#B5525D] tracking-[0.3em] text-base animate-slideUp">
-                BEAUTY SOLUTIONS HK
+                BEAUTY SOLUTIONS (HK) LIMITED
               </p>
             </div>
             
@@ -293,21 +293,21 @@ export default function Home() {
 
           {/* Right - Image composition */}
           <div className="relative h-[600px] hidden lg:block">
-            {/* Main hero image - beauty products */}
+            {/* Main hero image - beauty products/cosmetics */}
             <div className="absolute top-0 right-0 w-80 h-[450px] rounded-[2rem] overflow-hidden shadow-2xl animate-float">
               <Image
-                src="/about.jpg"
-                alt="Beauty Solutions"
+                src="/hero-cosmetics.jpg"
+                alt="Beauty Solutions (HK) Limited - Cosmetics"
                 fill
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#B5525D]/30 to-transparent" />
             </div>
-            {/* Coolbox product image */}
+            {/* Secondary beauty products image */}
             <div className="absolute bottom-0 left-0 w-64 h-80 rounded-[2rem] overflow-hidden shadow-xl animate-float animation-delay-1000">
               <Image
-                src="/Photo of brands/Coolboxbeauty/coolboxbeauty_1.jpg"
-                alt="Coolboxbeauty"
+                src="/hero-beauty-products.jpg"
+                alt="Beauty Solutions (HK) Limited - Products"
                 fill
                 className="object-cover"
               />
@@ -1523,7 +1523,7 @@ export default function Home() {
                   <br />
                   something
                   <br />
-                  <span className="italic text-[#B5525D]">beautiful</span>
+                  <span className="italic text-[#B5525D]">meaningful</span>
                 </h2>
               </div>
 
