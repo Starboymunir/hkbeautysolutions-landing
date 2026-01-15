@@ -1007,10 +1007,15 @@ export default function Home() {
               className={`relative h-20 w-48 rounded-2xl transition-all duration-300 overflow-hidden ${
                 activeBrand === 0 
                   ? 'bg-white shadow-xl shadow-[#B5525D]/30 scale-105 ring-2 ring-[#B5525D]' 
-                  : 'bg-white/10 border border-[#4A4040] hover:border-[#B5525D] hover:bg-white/20'
+                  : 'bg-transparent border border-[#4A4040] hover:border-[#B5525D]'
               }`}
             >
-              <Image src="/Photo of brands/Rebel Tatttoos/Rebel Tattoos _logo (2) (1).png" alt="Rebel Tattoos" fill className="object-contain p-3" />
+              <Image 
+                src="/Photo of brands/Rebel Tatttoos/Rebel Tattoos _logo (2) (1).png" 
+                alt="Rebel Tattoos" 
+                fill 
+                className={`object-contain p-3 transition-all duration-300 ${activeBrand !== 0 ? 'invert brightness-200' : ''}`} 
+              />
             </button>
             
             {/* COOLBOXBEAUTY Styled Text Tab */}
@@ -1019,11 +1024,15 @@ export default function Home() {
               className={`relative h-20 w-52 rounded-2xl transition-all duration-300 overflow-hidden ${
                 activeBrand === 1 
                   ? 'bg-white shadow-xl shadow-[#B5525D]/30 scale-105 ring-2 ring-[#B5525D]' 
-                  : 'bg-white/10 border border-[#4A4040] hover:border-[#B5525D] hover:bg-white/20'
+                  : 'bg-transparent border border-[#4A4040] hover:border-[#B5525D]'
               }`}
             >
               <div className="w-full h-full flex items-center justify-center">
-                <span className="text-lg font-bold tracking-tight text-[#1A1A1A]">COOLBOX<span className="text-[#B5525D]">BEAUTY</span></span>
+                <span className={`text-lg font-bold tracking-tight transition-colors duration-300 ${
+                  activeBrand === 1 
+                    ? 'text-[#1A1A1A]' 
+                    : 'text-white'
+                }`}>COOLBOX<span className="text-[#B5525D]">BEAUTY</span></span>
               </div>
             </button>
             
@@ -1033,10 +1042,18 @@ export default function Home() {
               className={`relative h-16 w-56 rounded-2xl transition-all duration-300 overflow-hidden ${
                 activeBrand === 2 
                   ? 'bg-white shadow-xl shadow-[#B5525D]/30 scale-105 ring-2 ring-[#B5525D]' 
-                  : 'bg-white/10 border border-[#4A4040] hover:border-[#B5525D] hover:bg-white/20'
+                  : 'bg-transparent border border-[#4A4040] hover:border-[#B5525D]'
               }`}
             >
-              <Image src="/Photo of brands/Colorfit/logo_colorfit/svg/black&pink-cropped.svg" alt="Colorfit" fill className="object-contain scale-150" />
+              <Image 
+                src={activeBrand === 2 
+                  ? "/Photo of brands/Colorfit/logo_colorfit/svg/black&pink-cropped.svg" 
+                  : "/Photo of brands/Colorfit/logo_colorfit/svg/white-cropped.svg"
+                } 
+                alt="Colorfit" 
+                fill 
+                className="object-contain scale-150" 
+              />
             </button>
           </div>
 
