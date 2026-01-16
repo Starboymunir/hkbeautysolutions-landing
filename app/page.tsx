@@ -59,6 +59,44 @@ export default function Home() {
   const [activeBrandImage, setActiveBrandImage] = useState(0);
   const [expandedAIFeature, setExpandedAIFeature] = useState<number | null>(null);
   const [activeBrandDev, setActiveBrandDev] = useState(0);
+  
+  // Contact form state
+  const [formData, setFormData] = useState({
+    name: '',
+    company: '',
+    email: '',
+    interest: '',
+    message: ''
+  });
+  const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [formMessage, setFormMessage] = useState('');
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormStatus('loading');
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        setFormStatus('success');
+        setFormMessage('Thank you! Your message has been sent successfully.');
+        setFormData({ name: '', company: '', email: '', interest: '', message: '' });
+      } else {
+        setFormStatus('error');
+        setFormMessage(data.error || 'Something went wrong. Please try again.');
+      }
+    } catch {
+      setFormStatus('error');
+      setFormMessage('Network error. Please check your connection and try again.');
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -1566,12 +1604,15 @@ export default function Home() {
 
             {/* Right - Form */}
             <div className="bg-[#F5EBE8] p-8 md:p-12 rounded-[2rem]">
-              <form className="space-y-6">
+              <form onSubmit={handleFormSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm text-[#3D3636] mb-2">Name</label>
                     <input 
-                      type="text" 
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
                       className="w-full px-0 py-3 bg-transparent border-b border-[#E8D8D8] focus:border-[#B5525D] outline-none transition-colors"
                       placeholder="Your name"
                     />
@@ -1579,7 +1620,9 @@ export default function Home() {
                   <div>
                     <label className="block text-sm text-[#3D3636] mb-2">Company</label>
                     <input 
-                      type="text" 
+                      type="text"
+                      value={formData.company}
+                      onChange={(e) => setFormData({...formData, company: e.target.value})}
                       className="w-full px-0 py-3 bg-transparent border-b border-[#E8D8D8] focus:border-[#B5525D] outline-none transition-colors"
                       placeholder="Company name"
                     />
@@ -1589,7 +1632,10 @@ export default function Home() {
                 <div>
                   <label className="block text-sm text-[#3D3636] mb-2">Email</label>
                   <input 
-                    type="email" 
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
                     className="w-full px-0 py-3 bg-transparent border-b border-[#E8D8D8] focus:border-[#B5525D] outline-none transition-colors"
                     placeholder="your@email.com"
                   />
@@ -1597,7 +1643,11 @@ export default function Home() {
 
                 <div>
                   <label className="block text-sm text-[#3D3636] mb-2">Interest</label>
-                  <select className="w-full px-0 py-3 bg-transparent border-b border-[#E8D8D8] focus:border-[#B5525D] outline-none transition-colors cursor-pointer">
+                  <select 
+                    value={formData.interest}
+                    onChange={(e) => setFormData({...formData, interest: e.target.value})}
+                    className="w-full px-0 py-3 bg-transparent border-b border-[#E8D8D8] focus:border-[#B5525D] outline-none transition-colors cursor-pointer"
+                  >
                     <option value="">Select a service</option>
                     <option value="brand">Private Brand Development</option>
                     <option value="product">Product Development</option>
@@ -1611,16 +1661,30 @@ export default function Home() {
                   <label className="block text-sm text-[#3D3636] mb-2">Message</label>
                   <textarea 
                     rows={4}
+                    required
+                    value={formData.message}
+                    onChange={(e) => setFormData({...formData, message: e.target.value})}
                     className="w-full px-0 py-3 bg-transparent border-b border-[#E8D8D8] focus:border-[#B5525D] outline-none transition-colors resize-none"
                     placeholder="Tell us about your project..."
                   />
                 </div>
 
+                {formStatus !== 'idle' && (
+                  <div className={`p-4 rounded-xl text-sm ${
+                    formStatus === 'success' ? 'bg-green-100 text-green-700' :
+                    formStatus === 'error' ? 'bg-red-100 text-red-700' :
+                    'bg-[#E8D8D8] text-[#3D3636]'
+                  }`}>
+                    {formStatus === 'loading' ? 'Sending your message...' : formMessage}
+                  </div>
+                )}
+
                 <button 
                   type="submit"
-                  className="w-full py-4 bg-[#1A1A1A] text-white tracking-widest text-sm hover:bg-[#B5525D] transition-colors duration-300 rounded-full mt-8"
+                  disabled={formStatus === 'loading'}
+                  className="w-full py-4 bg-[#1A1A1A] text-white tracking-widest text-sm hover:bg-[#B5525D] transition-colors duration-300 rounded-full mt-8 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {formStatus === 'loading' ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>
