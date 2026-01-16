@@ -21,10 +21,9 @@ export async function POST(request: NextRequest) {
         'Accept': 'application/json'
       },
       body: JSON.stringify({
-        access_key: process.env.WEB3FORMS_ACCESS_KEY || 'YOUR_ACCESS_KEY_HERE',
+        access_key: process.env.WEB3FORMS_ACCESS_KEY || 'fb5f8a62-d001-4fb0-bdfb-d98005d9d2a5',
         subject: `New Contact from ${name} - Beauty Solutions Website`,
         from_name: 'Beauty Solutions Website',
-        to: 'info@hkbeautysolutions.com',
         name: name,
         email: email,
         company: company || 'Not provided',
