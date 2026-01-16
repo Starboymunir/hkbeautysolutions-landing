@@ -293,21 +293,21 @@ export default function Home() {
 
           {/* Right - Image composition */}
           <div className="relative h-[600px] hidden lg:block">
-            {/* Main hero image - beauty products/cosmetics */}
+            {/* Main hero image - global sourcing/logistics */}
             <div className="absolute top-0 right-0 w-80 h-[450px] rounded-[2rem] overflow-hidden shadow-2xl animate-float">
               <Image
-                src="/hero-cosmetics.jpg"
-                alt="Beauty Solutions (HK) Limited - Cosmetics"
+                src="/hero-global.jpg"
+                alt="Beauty Solutions (HK) Limited - Global Sourcing"
                 fill
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#B5525D]/30 to-transparent" />
             </div>
-            {/* Secondary beauty products image */}
+            {/* Secondary image - warehouse/logistics */}
             <div className="absolute bottom-0 left-0 w-64 h-80 rounded-[2rem] overflow-hidden shadow-xl animate-float animation-delay-1000">
               <Image
-                src="/hero-beauty-products.jpg"
-                alt="Beauty Solutions (HK) Limited - Products"
+                src="/hero-logistics.jpg"
+                alt="Beauty Solutions (HK) Limited - Product Development"
                 fill
                 className="object-cover"
               />
