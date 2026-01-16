@@ -77,22 +77,36 @@ export default function Home() {
     setFormStatus('loading');
     
     try {
-      const response = await fetch('/api/contact', {
+      // Submit directly to Web3Forms
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: 'fb5f8a62-d001-4fb0-bdfb-d98005d9d2a5',
+          subject: `New Contact from ${formData.name} - Beauty Solutions Website`,
+          from_name: formData.name,
+          replyto: formData.email,
+          name: formData.name,
+          email: formData.email,
+          company: formData.company || 'Not provided',
+          interest: formData.interest || 'Not specified',
+          message: formData.message,
+        })
       });
       
       const data = await response.json();
       
-      if (response.ok) {
+      if (data.success) {
         setFormStatus('success');
         setFormMessage('Thank you! Your message has been sent successfully.');
         setFormData({ name: '', company: '', email: '', interest: '', message: '' });
         setShowSuccessPopup(true);
       } else {
         setFormStatus('error');
-        setFormMessage(data.error || 'Something went wrong. Please try again.');
+        setFormMessage(data.message || 'Something went wrong. Please try again.');
       }
     } catch {
       setFormStatus('error');
