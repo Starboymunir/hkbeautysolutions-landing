@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* Custom pink cursor */
+* {
+  cursor: url('/cursor.svg') 4 4, auto;
+}
+
+a, button, [role="button"], input[type="submit"], input[type="button"], .cursor-pointer {
+  cursor: url('/cursor-pointer.svg') 12 12, pointer;
+}
+
 html {
   scroll-behavior: smooth;
 }
