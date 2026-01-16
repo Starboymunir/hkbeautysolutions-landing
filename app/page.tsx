@@ -154,7 +154,7 @@ export default function Home() {
     <main className="bg-[#FDF8F5] text-[#1A1A1A] overflow-x-hidden">
       {/* Cursor follower */}
       <div 
-        className="fixed w-4 h-4 bg-[#B5525D] rounded-full pointer-events-none z-50 mix-blend-difference transition-transform duration-100 hidden lg:block"
+        className="fixed w-4 h-4 bg-[#B5525D] rounded-full pointer-events-none z-50 transition-transform duration-100 hidden lg:block shadow-md"
         style={{ 
           left: mousePosition.x - 8, 
           top: mousePosition.y - 8,
@@ -296,7 +296,7 @@ export default function Home() {
             {/* Main hero image - global sourcing/logistics */}
             <div className="absolute top-0 right-0 w-80 h-[450px] rounded-[2rem] overflow-hidden shadow-2xl animate-float">
               <Image
-                src="/hero-global.jpg"
+                src="/ChatGPT Image Jan 16, 2026, 08_50_21 AM.png"
                 alt="Beauty Solutions (HK) Limited - Global Sourcing"
                 fill
                 className="object-cover"
@@ -306,7 +306,7 @@ export default function Home() {
             {/* Secondary image - warehouse/logistics */}
             <div className="absolute bottom-0 left-0 w-64 h-80 rounded-[2rem] overflow-hidden shadow-xl animate-float animation-delay-1000">
               <Image
-                src="/hero-logistics.jpg"
+                src="/ChatGPT Image Jan 16, 2026, 08_50_48 AM.png"
                 alt="Beauty Solutions (HK) Limited - Product Development"
                 fill
                 className="object-cover"
@@ -577,8 +577,8 @@ export default function Home() {
                 {/* Single Hero Image with elegant frame */}
                 <div className="relative group">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#1A1A1A] to-[#3D3636] rounded-[2.5rem] transform rotate-1 group-hover:rotate-2 transition-transform duration-500" />
-                  <div className="relative aspect-square rounded-[2rem] overflow-hidden shadow-2xl shadow-[#1A1A1A]/30 bg-white">
-                    <Image src="/Photo of brands/Colorfit/colorfit.jpg" alt="Colorfit" fill className="object-cover" />
+                  <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl shadow-[#1A1A1A]/30 bg-white">
+                    <Image src="/Photo of brands/Colorfit/colorfit.jpg" alt="Colorfit" fill className="object-cover object-top" />
                     {/* Logo overlay */}
                     <div className="absolute bottom-6 left-6">
                       <div className="relative w-52 h-12 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden">
@@ -1007,14 +1007,14 @@ export default function Home() {
               className={`relative h-20 w-48 rounded-2xl transition-all duration-300 overflow-hidden ${
                 activeBrand === 0 
                   ? 'bg-white shadow-xl shadow-[#B5525D]/30 scale-105 ring-2 ring-[#B5525D]' 
-                  : 'bg-transparent border border-[#4A4040] hover:border-[#B5525D]'
+                  : 'bg-[#F5EBE8] border border-[#E8B4B8] hover:border-[#B5525D]'
               }`}
             >
               <Image 
                 src="/Photo of brands/Rebel Tatttoos/Rebel Tattoos _logo (2) (1).png" 
                 alt="Rebel Tattoos" 
                 fill 
-                className={`object-contain p-3 transition-all duration-300 ${activeBrand !== 0 ? 'invert brightness-200' : ''}`} 
+                className="object-contain p-3 transition-all duration-300" 
               />
             </button>
             
@@ -1024,14 +1024,14 @@ export default function Home() {
               className={`relative h-20 w-56 rounded-2xl transition-all duration-300 overflow-hidden ${
                 activeBrand === 1 
                   ? 'bg-white shadow-xl shadow-[#B5525D]/30 scale-105 ring-2 ring-[#B5525D]' 
-                  : 'bg-transparent border border-[#4A4040] hover:border-[#B5525D]'
+                  : 'bg-[#F5EBE8] border border-[#E8B4B8] hover:border-[#B5525D]'
               }`}
             >
               <Image 
                 src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" 
                 alt="Coolboxbeauty" 
                 fill 
-                className={`object-contain scale-[1.3] transition-all duration-300 ${activeBrand !== 1 ? 'invert brightness-200' : ''}`} 
+                className="object-contain scale-[1.3] transition-all duration-300" 
               />
             </button>
             
@@ -1041,14 +1041,11 @@ export default function Home() {
               className={`relative h-16 w-56 rounded-2xl transition-all duration-300 overflow-hidden ${
                 activeBrand === 2 
                   ? 'bg-white shadow-xl shadow-[#B5525D]/30 scale-105 ring-2 ring-[#B5525D]' 
-                  : 'bg-transparent border border-[#4A4040] hover:border-[#B5525D]'
+                  : 'bg-[#F5EBE8] border border-[#E8B4B8] hover:border-[#B5525D]'
               }`}
             >
               <Image 
-                src={activeBrand === 2 
-                  ? "/Photo of brands/Colorfit/logo_colorfit/svg/black&pink-cropped.svg" 
-                  : "/Photo of brands/Colorfit/logo_colorfit/svg/white-cropped.svg"
-                } 
+                src="/Photo of brands/Colorfit/logo_colorfit/svg/black&pink-cropped.svg" 
                 alt="Colorfit" 
                 fill 
                 className="object-contain scale-150" 
@@ -1112,8 +1109,8 @@ export default function Home() {
               </div>
 
               <div className="space-y-8">
-                <div className="relative w-64 h-16">
-                  <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" alt="Coolboxbeauty" fill className="object-contain scale-[1.8] invert brightness-200" />
+                <div className="relative w-64 h-16 bg-[#F5EBE8] rounded-xl p-2">
+                  <Image src="/Photo of brands/Coolboxbeauty/coolboxbeauty-logo.png" alt="Coolboxbeauty" fill className="object-contain scale-[1.6]" />
                 </div>
                 <h5 className="text-2xl font-light text-[#B8A8A8]">Beauty Tools & Skincare Devices</h5>
                 <p className="text-lg text-[#B8A8A8] leading-relaxed">
@@ -1138,8 +1135,8 @@ export default function Home() {
               {/* Single Hero Image with elegant frame */}
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#1A1A1A] to-[#3D3636] rounded-[2.5rem] transform rotate-1 group-hover:rotate-2 transition-transform duration-500" />
-                <div className="relative aspect-square rounded-[2rem] overflow-hidden shadow-2xl shadow-[#1A1A1A]/50 bg-white">
-                  <Image src="/Photo of brands/Colorfit/colorfit.jpg" alt="Colorfit" fill className="object-cover" />
+                <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl shadow-[#1A1A1A]/50 bg-white">
+                  <Image src="/Photo of brands/Colorfit/colorfit.jpg" alt="Colorfit" fill className="object-cover object-top" />
                   {/* Logo overlay */}
                   <div className="absolute bottom-6 left-6">
                     <div className="relative w-52 h-12 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden">
