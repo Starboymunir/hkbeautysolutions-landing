@@ -13,23 +13,26 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Send email using Web3Forms (free service, no backend required)
+    // Send email using Web3Forms (free service)
+    const formData = {
+      access_key: 'fb5f8a62-d001-4fb0-bdfb-d98005d9d2a5',
+      subject: `New Contact from ${name} - Beauty Solutions Website`,
+      from_name: name,
+      replyto: email,
+      name: name,
+      email: email,
+      company: company || 'Not provided',
+      interest: interest || 'Not specified',
+      message: message,
+    };
+
     const response = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
-      body: JSON.stringify({
-        access_key: process.env.WEB3FORMS_ACCESS_KEY || 'fb5f8a62-d001-4fb0-bdfb-d98005d9d2a5',
-        subject: `New Contact from ${name} - Beauty Solutions Website`,
-        from_name: 'Beauty Solutions Website',
-        name: name,
-        email: email,
-        company: company || 'Not provided',
-        interest: interest || 'Not specified',
-        message: message,
-      })
+      body: JSON.stringify(formData)
     });
 
     const data = await response.json();
@@ -37,8 +40,9 @@ export async function POST(request: NextRequest) {
     if (data.success) {
       return NextResponse.json({ success: true, message: 'Email sent successfully' });
     } else {
+      console.error('Web3Forms error:', data);
       return NextResponse.json(
-        { error: 'Failed to send email' },
+        { error: data.message || 'Failed to send email' },
         { status: 500 }
       );
     }
