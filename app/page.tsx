@@ -70,6 +70,7 @@ export default function Home() {
   });
   const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [formMessage, setFormMessage] = useState('');
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -88,6 +89,7 @@ export default function Home() {
         setFormStatus('success');
         setFormMessage('Thank you! Your message has been sent successfully.');
         setFormData({ name: '', company: '', email: '', interest: '', message: '' });
+        setShowSuccessPopup(true);
       } else {
         setFormStatus('error');
         setFormMessage(data.error || 'Something went wrong. Please try again.');
@@ -190,6 +192,41 @@ export default function Home() {
 
   return (
     <main className="bg-[#FDF8F5] text-[#1A1A1A] overflow-x-hidden">
+      {/* Success Popup Modal */}
+      {showSuccessPopup && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          {/* Backdrop */}
+          <div 
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            onClick={() => setShowSuccessPopup(false)}
+          />
+          {/* Modal */}
+          <div className="relative bg-white rounded-[2rem] p-8 md:p-12 max-w-md w-full shadow-2xl animate-[slideUp_0.3s_ease-out]">
+            {/* Success Icon */}
+            <div className="w-20 h-20 mx-auto mb-6 bg-green-100 rounded-full flex items-center justify-center">
+              <svg className="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            {/* Content */}
+            <h3 className="text-2xl font-light text-center mb-3">Message Sent!</h3>
+            <p className="text-[#3D3636] text-center mb-8">
+              Thank you for reaching out. We&apos;ll get back to you within 24-48 hours.
+            </p>
+            {/* Close Button */}
+            <button
+              onClick={() => {
+                setShowSuccessPopup(false);
+                setFormStatus('idle');
+              }}
+              className="w-full py-4 bg-[#B5525D] text-white rounded-full hover:bg-[#9A4350] transition-colors"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Cursor follower */}
       <div 
         className="fixed w-4 h-4 bg-[#B5525D] rounded-full pointer-events-none z-50 transition-transform duration-100 hidden lg:block shadow-md"
